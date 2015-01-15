@@ -1,0 +1,2 @@
+# PieniVuoropohjainenStrategiapeli
+Javalabra harjoitustyö
