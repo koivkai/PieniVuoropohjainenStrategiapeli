@@ -1,4 +1,4 @@
-Aihe pieni vuoropohjainen strategia peli, tyyliin advance wars, uniwar ja battle for westnoth. 
+Aihe pieni vuoropohjainen strategia peli, tyyliin advance wars, uniwar tai battle for westnoth. 
 Kartta joka koostuu neliöistä tai heksoita, jokaisella neliöllä terrain type.
 Erilaiset terrainit vaalitivat eri määrän movement pointteja?. 
 Erilaisia yksiköitä ja rakennuksia. Rakennukset tuottavat kultaa tai mahdollistavat yksiköiden oston. Yksikot voivat vallata rakennuksia, mahdollisesti vain jotkin yksiköt. Yksiköillä ainakin HP ATTACK DEFENCE MOVEMENTmahdollisesti attact ja defence typet.
