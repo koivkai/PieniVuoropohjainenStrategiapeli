@@ -1,4 +1,7 @@
 Aihe pieni vuoropohjainen strategia peli, tyyliin advance wars, uniwar ja battle for westnoth. 
-Kartta joka koostuu neliöistä tai heksoita, jokaisella neliöllä terrain type. 
-Erilaisia yksiköitä ja rakennuksia. Tavoitteena vallata vastustajan HQ.
-Mahdollisesti erilaisia factioneja ja eri karttoja
+Kartta joka koostuu neliöistä tai heksoita, jokaisella neliöllä terrain type.
+Erilaiset terrainit vaalitivat eri määrän movement pointteja?. 
+Erilaisia yksiköitä ja rakennuksia. Rakennukset tuottavat kultaa tai mahdollistavat yksiköiden oston. Yksikot voivat vallata rakennuksia, mahdollisesti vain jotkin yksiköt. Yksiköillä ainakin HP ATTACK DEFENCE MOVEMENTmahdollisesti attact ja defence typet.
+Tavoitteena vallata vastustajan HQ.
+Mahdollisesti erilaisia factioneja ja eri karttoja.
+
