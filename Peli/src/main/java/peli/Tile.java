@@ -13,8 +13,8 @@ public abstract class Tile {
     
     private int x;
     private int y;
-    private int movement;
-    private int defence;
+    private double movement;
+    private double defence;
     private TileType type;
 
     public Tile(int x, int y, TileType t) {
@@ -26,10 +26,16 @@ public abstract class Tile {
         }
         else if (t.equals(TileType.HILLS)) {
             this.movement=1;
-            this.defence=1;
+            this.defence=0.1;
             
         }
     }
+
+    public double getDefence() {
+        return defence;
+    }
+    
+    
     
     
     
