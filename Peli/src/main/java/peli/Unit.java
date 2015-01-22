@@ -1,10 +1,7 @@
+package peli;
 
-
-package peli; 
-
- 
 public class Unit {
-    
+
     private int MP;
     private double Defence;
     private double Attack;
@@ -20,22 +17,21 @@ public class Unit {
         this.tile = tile;
         this.name = name;
     }
-    
-    
-    
+
     public void Attack(Unit unit) {
         double effectiveDef = unit.getDefence() + unit.getTile().getDefence();
         double damage = (1 - effectiveDef) * this.Attack;
         unit.TakeDamage(damage);
-        
+
     }
+
     public void Move() {
-        
+
     }
-    
+
     public void Capture() {
-    
-}
+
+    }
 
     public double getDefence() {
         return Defence;
@@ -44,24 +40,18 @@ public class Unit {
     public Tile getTile() {
         return tile;
     }
-    
+
     public void TakeDamage(double damage) {
         if (this.HP - damage <= 0) {
             this.Die();
-            
-        }
-        else {
-            this.HP= this.HP - damage;
-        }
-    }
-    
-    public void Die() {
-        
-    }
-    
-     
-    
-    
-   
 
-} 
+        } else {
+            this.HP = this.HP - damage;
+        }
+    }
+
+    public void Die() {
+
+    }
+
+}

@@ -10,5 +10,6 @@ package peli;
  * @author Kaius
  */
 public enum TileType {
+
     PLAINS, HILLS, MOUNTAINS, FOREST
 }
