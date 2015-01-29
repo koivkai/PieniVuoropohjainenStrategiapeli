@@ -7,6 +7,7 @@ public class Unit {
     private double Attack;
     private double HP;
     private Tile tile;
+    private Player player; //owner
     String name;
 
     public Unit(int MP, double Defence, double Attack, double HP, Tile tile, String name) {
@@ -29,8 +30,8 @@ public class Unit {
 
     }
 
-    public void Capture() {
-
+    public void Capture(Building building) {
+        building.setPlayer(this.player);
     }
 
     public double getDefence() {
@@ -51,6 +52,7 @@ public class Unit {
     }
 
     public void Die() {
+        this.player.getArmy().removeUnit(this);
 
     }
 
