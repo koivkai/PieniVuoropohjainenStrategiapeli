@@ -18,4 +18,10 @@ public class Army {
         this.units.remove(unit);
     }
 
+    public ArrayList<Unit> getUnits() {
+        return units;
+    }
+    
+    
+
 }

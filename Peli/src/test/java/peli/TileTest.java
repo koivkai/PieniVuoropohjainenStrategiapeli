@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package peli;
 
 import org.junit.After;
@@ -10,8 +6,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import peli.Tile;
+import peli.TileType;
 import static org.junit.Assert.*;
-import peli.*;
 
 /**
  *
@@ -40,12 +37,26 @@ public class TileTest {
 
     @Test
     public void constructorHandlesEnumsCorrectly() {
-        Tile plains = new Tile(0, 0, TileType.PLAINS);
-        double d = plains.getDefence();
-        int m = plains.getMovement();
-        assertEquals(0, d);
-        assertEquals(m, 1);
+        Tile tile = new Tile(0, 0, TileType.PLAINS);
+        
+        
+        assertEquals(tile.getMovement(), 1);
+        
 
+    }
+
+    
+    @Test
+    public void testGetDefence() {
+        
+    }
+
+    /**
+     * Test of getMovement method, of class Tile.
+     */
+    @Test
+    public void testGetMovement() {
+        
     }
 
     
@@ -55,4 +66,4 @@ public class TileTest {
 
     
 
-}
+

@@ -15,8 +15,7 @@ import org.junit.runners.Suite;
  *
  * @author Kaius
  */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({peli.PeliSuite.class})
+
 public class RootSuite {
 
     @BeforeClass

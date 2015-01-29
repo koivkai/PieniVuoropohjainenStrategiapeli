@@ -56,4 +56,10 @@ public class Unit {
 
     }
 
+    public double getHP() {
+        return HP;
+    }
+    
+    
+
 }
