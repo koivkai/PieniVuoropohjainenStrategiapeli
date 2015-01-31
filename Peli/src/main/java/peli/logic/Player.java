@@ -1,4 +1,4 @@
-package peli;
+package peli.logic;
 
 import java.util.*;
 

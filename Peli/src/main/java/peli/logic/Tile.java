@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package peli;
+package peli.logic;
 
 /**
  *
@@ -26,6 +26,14 @@ public class Tile {
         } else if (t.equals(TileType.HILLS)) {
             this.movement = 1;
             this.defence = 0.1;
+
+        } else if (t.equals(TileType.FOREST)) {
+            this.movement = 2;
+            this.defence = 0.2;
+
+        } else if (t.equals(TileType.MOUNTAINS)) {
+            this.movement = 3;
+            this.defence = 0.3;
 
         }
     }

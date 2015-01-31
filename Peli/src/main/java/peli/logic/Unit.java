@@ -1,4 +1,4 @@
-package peli;
+package peli.logic;
 
 public class Unit {
 
