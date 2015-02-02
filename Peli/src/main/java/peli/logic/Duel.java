@@ -1,6 +1,6 @@
 
 
-package peli; 
+package peli.logic; 
 
  
 public class Duel implements Scenario { 

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package peli; 
+package peli.logic; 
 
 
 public interface Scenario { // mahdollistaa erilaisten karttojen teon.
