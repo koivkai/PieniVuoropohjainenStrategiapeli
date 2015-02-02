@@ -1,8 +1,9 @@
-package peli;
+package peli.logic;
 
 public class HumanPlayer implements Player {
 
     private Army army;
+    private int resources;
 
     @Override
     public void pelaaVuoro() {
