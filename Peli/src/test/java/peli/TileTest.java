@@ -40,7 +40,7 @@ public class TileTest {
         Tile tile = new Tile(0, 0, TileType.PLAINS);
         
         
-        assertEquals(tile.getMovement(), 1);
+        assertEquals(tile.getMovement(), 1, 0.01);
         
 
     }
