@@ -20,8 +20,9 @@ public class Unit {
     }
 
     public void Attack(Unit unit) {
-        double effectiveDef = unit.getDefence() + unit.getTile().getDefence();
-        double damage = (1 - effectiveDef) * this.Attack;
+        
+        double damage = (1 - unit.getDefence()) * this.Attack;
+        damage = damage * (1 - unit.getTile().getDefence()) * this.Attack;
         unit.TakeDamage(damage);
 
     }

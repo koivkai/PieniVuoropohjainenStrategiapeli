@@ -3,35 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package peli.logic;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
- * @author Kaius
+ * @author Vesa
  */
-
-public class RootSuite {
-
+public class BuildingTest {
+    
+    public BuildingTest() {
+    }
+    
     @BeforeClass
-    public static void setUpClass() throws Exception {
+    public static void setUpClass() {
     }
-
+    
     @AfterClass
-    public static void tearDownClass() throws Exception {
+    public static void tearDownClass() {
     }
-
+    
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
     }
 
-    @After
-    public void tearDown() throws Exception {
-    }
+   
     
 }

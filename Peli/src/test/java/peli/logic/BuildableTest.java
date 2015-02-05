@@ -1,10 +1,9 @@
-package peli;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package peli.logic;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,16 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import peli.HumanPlayer;
-import peli.HumanPlayer;
 
 /**
  *
- * @author Kaius
+ * @author Vesa
  */
-public class HumanPlayerTest {
+public class BuildableTest {
     
-    public HumanPlayerTest() {
+    public BuildableTest() {
     }
     
     @BeforeClass
@@ -40,12 +37,6 @@ public class HumanPlayerTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of pelaaVuoro method, of class HumanPlayer.
-     */
-    @Test
-    public void testPelaaVuoro() {
-        
-    }
+   
     
 }

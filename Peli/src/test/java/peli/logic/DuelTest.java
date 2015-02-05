@@ -1,21 +1,24 @@
-
-package peli;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package peli.logic;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import peli.Main;
 import static org.junit.Assert.*;
 
 /**
  *
  * @author Vesa
  */
-public class MainTest {
+public class DuelTest {
     
-    public MainTest() {
+    public DuelTest() {
     }
     
     @BeforeClass
@@ -35,11 +38,23 @@ public class MainTest {
     }
 
     /**
-     * Test of main method, of class Main.
+     * Test of buildMap method, of class Duel.
      */
     @Test
-    public void testMain() {
+    public void testBuildMap() {
         
+    }
+
+    
+    @Test
+    public void testPlaceBuildings() {
+       
+    }
+
+    
+    @Test
+    public void testPlaceStartingUnits() {
+       
     }
     
 }

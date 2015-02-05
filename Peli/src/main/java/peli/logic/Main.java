@@ -5,13 +5,17 @@
  */
 package peli.logic;
 
+import peli.ui.UserInterface;
+
 /**
  *
  * @author Kaius
  */
 public class Main {
     public static void main(String[] args) {
+        UserInterface ui = new UserInterface();
         
+        ui.run();
     }
     
 }
