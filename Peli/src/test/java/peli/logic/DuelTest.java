@@ -37,9 +37,7 @@ public class DuelTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of buildMap method, of class Duel.
-     */
+    
     @Test
     public void testBuildMap() {
         

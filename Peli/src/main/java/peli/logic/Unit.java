@@ -10,6 +10,7 @@ public class Unit {
     private Player player; //owner
     String name;
 
+
     public Unit(int MP, double Defence, double Attack, double HP, Tile tile, String name) {
         this.MP = MP;
         this.Defence = Defence;
@@ -19,10 +20,17 @@ public class Unit {
         this.name = name;
     }
 
+    /**
+ * Metodi yksiköiden hyökkäysten käsittelyyn.
+ * Laskee paljonko vahinkoa kohde yksikön tulee ottaa ja laittaa sitten sen ottamaan vahingon.
+ * @param   unit   Hyökkäyksen kohteena oleva yksikkö
+ * 
+ * 
+ */
     public void Attack(Unit unit) {
         
-        double damage = (1 - unit.getDefence()) * this.Attack;
-        damage = damage * (1 - unit.getTile().getDefence()) * this.Attack;
+        double damage = (1 - (unit.getDefence() + unit.getTile().getDefence())) * this.Attack;
+        
         unit.TakeDamage(damage);
 
     }
@@ -30,7 +38,15 @@ public class Unit {
     public void Move() {
 
     }
-
+    
+    /**
+ * Vallottaa annetun rakennuksen yksikkön omistamalle pelaajalle.
+ * 
+ *
+ * @param   building   vallattava rakennus
+ * 
+ * @return todennäköisyys kalibroituna
+ */
     public void Capture(Building building) {
         building.setPlayer(this.player);
     }
@@ -42,7 +58,16 @@ public class Unit {
     public Tile getTile() {
         return tile;
     }
-
+    
+    /**
+ * Tarkistaa kuoleeko yksikkö siihen kohdistuneeseen vahonkoon, jos ei kuole niin vähentä yksikön elinpisteitä.
+ * 
+ *
+ * @param   damage   yksikköön kosdistuvan vahingon määrä
+ * 
+ * 
+ */
+    
     public void TakeDamage(double damage) {
         if (this.HP - damage <= 0) {
             this.Die();
@@ -51,7 +76,10 @@ public class Unit {
             this.HP = this.HP - damage;
         }
     }
-
+    
+    /**
+ * Poistaa yksikön armeijasta ja täten pelistä.
+ * */
     public void Die() {
         this.player.getArmy().removeUnit(this);
 
@@ -59,6 +87,10 @@ public class Unit {
 
     public double getHP() {
         return HP;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     
     

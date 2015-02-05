@@ -15,4 +15,10 @@ public class HumanPlayer implements Player {
         return this.army;
     }
 
+    public void setArmy(Army army) {
+        this.army = army;
+    }
+    
+    
+
 }

@@ -44,9 +44,6 @@ public class HumanPlayerTest {
     }
 
    
-    @Test
-    public void testGetArmy() {
-       
-    }
+    
     
 }
