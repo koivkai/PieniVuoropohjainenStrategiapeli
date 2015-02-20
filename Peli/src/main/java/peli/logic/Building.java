@@ -9,6 +9,8 @@ public class Building {
     private String nimi;
     private Player player; // owner
     private ArrayList<Buildable> availableUnits;
+    private int goldIncome;
+    private int supply;
 
     public Building(int x, int y, String nimi, Player player) {
         this.x = x;
@@ -21,5 +23,15 @@ public class Building {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public int getGoldIncome() {
+        return goldIncome;
+    }
+
+    public int getSupply() {
+        return supply;
+    }
+    
+    
 
 }
