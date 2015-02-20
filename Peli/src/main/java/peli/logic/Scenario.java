@@ -8,7 +8,6 @@ package peli.logic;
 
 
 public interface Scenario { // mahdollistaa erilaisten karttojen teon.
-    public void buildMap();
-    public void placeBuildings();
-    public void placeStartingUnits();
+    public void setUpScenario();
+    
 }
