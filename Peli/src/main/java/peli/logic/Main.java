@@ -6,6 +6,7 @@
 package peli.logic;
 
 import peli.ui.UserInterface;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         UserInterface ui = new UserInterface();
         
-        ui.run();
+        SwingUtilities.invokeLater(ui);
     }
     
 }
