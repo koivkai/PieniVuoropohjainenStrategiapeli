@@ -18,10 +18,10 @@ public class UserInterface implements Runnable {
 
     private JFrame frame;
     private Canvas canvas;
-    private Scenario scenario;
+    private Duel duel;
 
-    public UserInterface(Scenario scenario) {
-        this.scenario = scenario;
+    public UserInterface(Duel duel) {
+        this.duel = duel;
     }
 
     @Override
@@ -42,7 +42,7 @@ public class UserInterface implements Runnable {
     }
     
     private void createComponents(Container container) {
-        canvas = new Canvas(this.scenario);
+        canvas = new Canvas(this.duel);
         container.add(canvas);
     }
 

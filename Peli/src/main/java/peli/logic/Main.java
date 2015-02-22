@@ -5,6 +5,7 @@
  */
 package peli.logic;
 
+import java.util.ArrayList;
 import peli.ui.UserInterface;
 import javax.swing.SwingUtilities;
 
@@ -18,11 +19,22 @@ public class Main {
         Player p1 = new HumanPlayer();
         Player p2 = new HumanPlayer();
         
-        Scenario duel = new Duel(p1, p2);
+        Duel duel = new Duel(p1, p2);
+        duel.setUpScenario();
+        duel.buildMap();
+        duel.buildMap();
+        duel.buildMap();
+        duel.buildMap();
+        
+       int x = duel.getMap().getTiles().size();
+        System.out.println(x);
+        
+        System.out.println(duel.getMap().getTiles().get(0).getType());
         
         UserInterface ui = new UserInterface(duel);
         
         SwingUtilities.invokeLater(ui);
     }
+    
     
 }

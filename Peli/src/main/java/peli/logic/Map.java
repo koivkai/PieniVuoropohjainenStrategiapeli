@@ -2,7 +2,7 @@
 
 package peli.logic; 
 
-import java.util.ArrayList;
+import java.util.*;
 
  
 public class Map { 
@@ -14,7 +14,7 @@ public class Map {
     public Map(int rowLength, int numberOfRows) {
         this.rowLength = rowLength;
         this.numberOFRows = numberOfRows;
-        this.Tiles = new ArrayList<Tile>();
+        this.Tiles = new ArrayList<>();
     }
     
     public void addTile(Tile tile) {
@@ -30,7 +30,7 @@ public class Map {
     }
 
     public ArrayList<Tile> getTiles() {
-        return Tiles;
+        return this.Tiles;
     }
     
     

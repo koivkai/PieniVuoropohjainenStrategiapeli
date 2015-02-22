@@ -44,6 +44,7 @@ public class Tile {
             this.defence = 0.3;
 
         }
+        this.type = t;
     }
 
     public double getDefence() {
@@ -53,5 +54,11 @@ public class Tile {
     public int getMovement() {
         return movement;
     }
+
+    public TileType getType() {
+        return type;
+    }
+    
+    
 
 }

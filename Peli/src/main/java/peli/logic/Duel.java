@@ -3,7 +3,7 @@
 package peli.logic; 
 
  
-public class Duel extends Scenario { 
+public class Duel  { 
 
     private Map map;
     private Player player1;
@@ -24,17 +24,19 @@ public class Duel extends Scenario {
         Tile tile1 = new Tile(1, 0, TileType.PLAINS);
         this.map.addTile(tile1);
         
-        Tile tile2 = new Tile(2, 0, TileType.PLAINS);
+        Tile tile2 = new Tile(2, 0, TileType.FOREST);
         this.map.addTile(tile2);
         
         Tile tile3 = new Tile(3, 0, TileType.PLAINS);
         this.map.addTile(tile3);
         
-        Tile tile4 = new Tile(4, 0, TileType.PLAINS);
+        Tile tile4 = new Tile(4, 0, TileType.FOREST);
         this.map.addTile(tile4);
         
         Tile tile5 = new Tile(5, 0, TileType.PLAINS);
         this.map.addTile(tile5);
+        Tile tile6 = new Tile(6, 0, TileType.FOREST);
+        this.map.addTile(tile6);
     }
 
     
@@ -47,10 +49,15 @@ public class Duel extends Scenario {
         
     }
 
-    @Override
     public void setUpScenario() {
         buildMap();
     }
+
+    public Map getMap() {
+        return map;
+    }
+    
+    
 
    
     
