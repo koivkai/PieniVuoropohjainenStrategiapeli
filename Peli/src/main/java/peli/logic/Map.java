@@ -24,6 +24,18 @@ public class Map {
     public int getRowLength() {
         return rowLength;
     }
+
+    public int getNumberOFRows() {
+        return numberOFRows;
+    }
+
+    public ArrayList<Tile> getTiles() {
+        return Tiles;
+    }
+    
+    
+    
+    
     
     
    

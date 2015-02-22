@@ -12,13 +12,16 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
+import peli.logic.*;
 
 public class UserInterface implements Runnable {
 
     private JFrame frame;
     private Canvas canvas;
+    private Scenario scenario;
 
-    public UserInterface() {
+    public UserInterface(Scenario scenario) {
+        this.scenario = scenario;
     }
 
     @Override
@@ -39,7 +42,7 @@ public class UserInterface implements Runnable {
     }
     
     private void createComponents(Container container) {
-        canvas = new Canvas();
+        canvas = new Canvas(this.scenario);
         container.add(canvas);
     }
 

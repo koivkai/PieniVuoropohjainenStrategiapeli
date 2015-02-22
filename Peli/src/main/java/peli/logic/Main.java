@@ -14,7 +14,13 @@ import javax.swing.SwingUtilities;
  */
 public class Main {
     public static void main(String[] args) {
-        UserInterface ui = new UserInterface();
+        
+        Player p1 = new HumanPlayer();
+        Player p2 = new HumanPlayer();
+        
+        Scenario duel = new Duel(p1, p2);
+        
+        UserInterface ui = new UserInterface(duel);
         
         SwingUtilities.invokeLater(ui);
     }

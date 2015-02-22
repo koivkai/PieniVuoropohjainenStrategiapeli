@@ -1,6 +1,6 @@
 package peli.logic;
 
-public class HumanPlayer implements Player {
+public class HumanPlayer extends Player {
 
     private Army army;
     private int resources;
@@ -10,14 +10,10 @@ public class HumanPlayer implements Player {
         
     }
 
-    @Override
-    public Army getArmy() {
-        return this.army;
-    }
+    
+    
 
-    public void setArmy(Army army) {
-        this.army = army;
-    }
+    
     
     
 

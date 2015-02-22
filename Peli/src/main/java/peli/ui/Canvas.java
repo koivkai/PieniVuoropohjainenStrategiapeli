@@ -9,12 +9,16 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import peli.logic.*;
 
  
 public class Canvas extends JPanel{
     
-    public Canvas() {
+    private Scenario scenario;
+    
+    public Canvas(Scenario scenario) {
         super.setBackground(Color.WHITE);
+        this.scenario = scenario;
     }
 
    @Override
@@ -28,9 +32,33 @@ public class Canvas extends JPanel{
             
         }
         
+        
+        
         graphics.drawImage(plains, 0, 0, this);
         
         int y = 0;
+        int t = 0;
+        for (int i= 0; i < this.scenario.getMap().getNumberOFRows(); i++) {
+            
+            int x = 200;
+            
+            for (int i2= 0; i < 20; i++) {
+                if (t < this.scenario.getMap().getTiles().size()) {
+                    Tile tile = this.scenario.getMap().getTiles().get(t);
+                    BufferedImage imageToDraw = null;
+                    
+                    if (tile.getType() == TileType.PLAINS) {
+                        
+                    }
+                }
+            }
+            
+            x= 200;
+            y = y+40;
+            
+        }
+        
+        int y2 = 0;
         int a = 0;
         for (int i2=0; i2 <20; i2++) {
             
@@ -89,18 +117,18 @@ public class Canvas extends JPanel{
                 a = 0;
             }
             
-            graphics.fillRect(x, y, 40, 40);
+            graphics.fillRect(x, y2, 40, 40);
             x = x + 40;
             
         }
             x= 200;
-            y = y+40;
+            y2 = y2+40;
             
         }
         
         
         
-//        graphics.fillRect(300, 200, 50, 50);
+        graphics.fillRect(300, 200, 50, 50);
 
     }
 

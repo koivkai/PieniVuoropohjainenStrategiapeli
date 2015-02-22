@@ -2,9 +2,26 @@ package peli.logic;
 
 import java.util.*;
 
-public interface Player {
+public abstract class Player {
 
-    public void pelaaVuoro();
+    private Army army;
+    private int resources;
 
-    public Army getArmy();
+    public Player() {
+        this.resources = 0;
+        this.army = new Army();
+    }
+    
+    
+    
+    public abstract void pelaaVuoro();
+    
+    public Army getArmy() {
+        return this.army;
+    }
+    
+    public void setArmy(Army army) {
+        this.army = army;
+    }
 }
+

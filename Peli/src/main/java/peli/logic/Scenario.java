@@ -7,7 +7,15 @@
 package peli.logic; 
 
 
-public interface Scenario { // mahdollistaa erilaisten karttojen teon.
-    public void setUpScenario();
+public abstract class Scenario { // mahdollistaa erilaisten karttojen teon.
+    
+    private Map map;
+    
+    public abstract void setUpScenario();
+    
+    
+    public Map getMap() {
+        return map;
+    } 
     
 }

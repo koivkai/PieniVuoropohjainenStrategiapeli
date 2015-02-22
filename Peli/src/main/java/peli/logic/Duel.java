@@ -3,7 +3,7 @@
 package peli.logic; 
 
  
-public class Duel implements Scenario { 
+public class Duel extends Scenario { 
 
     private Map map;
     private Player player1;
@@ -51,6 +51,10 @@ public class Duel implements Scenario {
     public void setUpScenario() {
         buildMap();
     }
+
+   
+    
+    
 
    
 
