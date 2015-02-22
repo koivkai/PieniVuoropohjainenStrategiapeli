@@ -39,6 +39,20 @@ public class Canvas extends JPanel{
             
         }
         
+        BufferedImage mountains = null;
+        try {
+            mountains = ImageIO.read(new File("images/mountainsTile.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage neutralMine = null;
+        try {
+            neutralMine = ImageIO.read(new File("images/neutralMine.png"));
+        } catch (IOException ex) {
+            
+        }
+        
 //        this.scenario.getMap().getNumberOFRows();
         
         graphics.drawImage(plains, 0, 0, this);
@@ -60,6 +74,14 @@ public class Canvas extends JPanel{
                     
                     if (tile.getType() == TileType.FOREST) {
                         imageToDraw = forest;
+                    }
+                    
+                    if (tile.getType() == TileType.MOUNTAINS) {
+                        imageToDraw = mountains;
+                    }
+                    
+                    if (tile.getType() == TileType.NEUTRALMINE) {
+                        imageToDraw = neutralMine;
                     }
                     
                     if (imageToDraw != null) {

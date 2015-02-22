@@ -21,10 +21,7 @@ public class Main {
         
         Duel duel = new Duel(p1, p2);
         duel.setUpScenario();
-        duel.buildMap();
-        duel.buildMap();
-        duel.buildMap();
-        duel.buildMap();
+        
         
        int x = duel.getMap().getTiles().size();
         System.out.println(x);
