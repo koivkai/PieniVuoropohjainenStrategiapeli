@@ -57,7 +57,7 @@ public class Duel  {
 //        Tile tile15 = new Tile(15, 0, TileType.PLAINS);
 //        this.map.addTile(tile15);
         
-        String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222";
+        String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222224pfppppppp1ppppppppp1pffffpmpf1ppfffffpp322225pmpf1apfqmqf627pppf1pmpf1ppfffff1pppppf1pmpp1ppppppq1pfffff1pmmp1fffffp1qpppppp1ppmp1fppppp1fffffpp1fpmp1fppp627fqmqfpa1fpmp822224ppfffffpp1fpmpffffp1ppppppppp1pppppppfp32222222224pppapappz1zppfmfppp1appppppppbpppfmfpqmzmppqmqppafappfmfppppqpfffffpqmqppfmfpppppp";
         
         int x = 0;
         int y = 0;
@@ -99,6 +99,25 @@ public class Duel  {
             if (tileTypeID == '3') {
                 typeToBe = TileType.ROADUPRIGHTDOWN;
             }
+            if (tileTypeID == '4') {
+                typeToBe = TileType.ROADUPLEFTDOWN;
+            }
+            if (tileTypeID == '5') {
+                typeToBe = TileType.ROADDOWNTOLEFT;
+            }
+            if (tileTypeID == '6') {
+                typeToBe = TileType.ROADDOWNTORIGHT;
+            }
+            if (tileTypeID == '7') {
+                typeToBe = TileType.ROADUPTOLEFT;
+            }
+            if (tileTypeID == '8') {
+                typeToBe = TileType.ROADUPTORIGHT;
+            }
+            if (tileTypeID == 'b') {
+                typeToBe = TileType.BLUEHQ;
+            }
+            
             
             Tile tile = new Tile (x,y, typeToBe);
             this.map.addTile(tile);

@@ -95,6 +95,44 @@ public class Canvas extends JPanel{
             
         }
         
+        BufferedImage roadUpLeftDown = null;
+        try {
+            roadUpLeftDown = ImageIO.read(new File("images/roadUpLeftDown.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage roadDownToLeft = null;
+        try {
+            roadDownToLeft = ImageIO.read(new File("images/roadDownToLeft.png"));
+        } catch (IOException ex) {
+            
+        }
+        BufferedImage roadDownToRight = null;
+        try {
+            roadDownToRight = ImageIO.read(new File("images/roadDownToRight.png"));
+        } catch (IOException ex) {
+            
+        }
+        BufferedImage roadUpToLeft = null;
+        try {
+            roadUpToLeft = ImageIO.read(new File("images/roadUpToLeft.png"));
+        } catch (IOException ex) {
+            
+        }
+        BufferedImage roadUpToRight = null;
+        try {
+            roadUpToRight = ImageIO.read(new File("images/roadUpToRight.png"));
+        } catch (IOException ex) {
+            
+        }
+        BufferedImage blueHQ = null;
+        try {
+            blueHQ = ImageIO.read(new File("images/blueHQ.png"));
+        } catch (IOException ex) {
+            
+        }
+        
 //        this.scenario.getMap().getNumberOFRows();
         
         graphics.drawImage(plains, 0, 0, this);
@@ -129,7 +167,7 @@ public class Canvas extends JPanel{
                         imageToDraw = neutralFarm;
                     }
                     if (tile.getType() == TileType.OUTPOSTNEUTRAL) {
-                        imageToDraw = neutralFarm;
+                        imageToDraw = neutralOutpost;
                     }
                     if (tile.getType() == TileType.REDHQ) {
                         imageToDraw = redHQ;
@@ -142,6 +180,24 @@ public class Canvas extends JPanel{
                     }
                     if (tile.getType() == TileType.ROADHORIZONTAL) {
                         imageToDraw = roadHorizontal;
+                    }
+                    if (tile.getType() == TileType.ROADUPLEFTDOWN) {
+                        imageToDraw = roadUpLeftDown;
+                    }
+                    if (tile.getType() == TileType.ROADDOWNTOLEFT) {
+                        imageToDraw = roadDownToLeft;
+                    }
+                    if (tile.getType() == TileType.ROADDOWNTORIGHT) {
+                        imageToDraw = roadDownToRight;
+                    }
+                    if (tile.getType() == TileType.ROADUPTOLEFT) {
+                        imageToDraw = roadUpToLeft;
+                    }
+                    if (tile.getType() == TileType.ROADUPTORIGHT) {
+                        imageToDraw = roadUpToRight;
+                    }
+                    if (tile.getType() == TileType.BLUEHQ) {
+                        imageToDraw = blueHQ;
                     }
                     
                     if (imageToDraw != null) {
