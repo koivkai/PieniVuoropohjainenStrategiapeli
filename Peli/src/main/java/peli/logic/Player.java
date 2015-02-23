@@ -5,10 +5,12 @@ import java.util.*;
 public abstract class Player {
 
     private Army army;
-    private int resources;
+    private int gold;
+    private int supply;
 
     public Player() {
-        this.resources = 0;
+        this.gold = 0;
+        this.supply = 0;
         this.army = new Army();
     }
     
@@ -22,6 +24,10 @@ public abstract class Player {
     
     public void setArmy(Army army) {
         this.army = army;
+    }
+    
+    public void addUnit(Unit unit) {
+        this.army.addUnit(unit);
     }
 }
 

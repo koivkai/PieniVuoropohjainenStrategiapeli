@@ -1,6 +1,4 @@
-
 package peli.logic;
-
 
 public class Tile {
 
@@ -10,16 +8,16 @@ public class Tile {
     private double defence;
     private TileType type;
     private Building building;
+    private int uiX;
+    private int uiY;
 
     public Tile(int x, int y, TileType type, Building building) {
         this.x = x;
         this.y = y;
-        
+
         this.type = type;
         this.building = building;
     }
-    
-    
 
     public Tile(int x, int y, TileType t) {
         this.x = x;
@@ -58,7 +56,23 @@ public class Tile {
     public TileType getType() {
         return type;
     }
-    
+
+    public void setUiX(int uiX) {
+        this.uiX = uiX;
+    }
+
+    public void setUiY(int uiY) {
+        this.uiY = uiY;
+    }
+
+    public int getUiX() {
+        return uiX;
+    }
+
+    public int getUiY() {
+        return uiY;
+    }
+
     
 
 }

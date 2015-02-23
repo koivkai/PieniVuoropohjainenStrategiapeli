@@ -14,24 +14,12 @@ import javax.swing.SwingUtilities;
  * @author Kaius
  */
 public class Main {
+
     public static void main(String[] args) {
-        
-        Player p1 = new HumanPlayer();
-        Player p2 = new HumanPlayer();
-        
-        Duel duel = new Duel(p1, p2);
-        duel.setUpScenario();
-        
-        
-       int x = duel.getMap().getTiles().size();
-        System.out.println(x);
-        
-        System.out.println(duel.getMap().getTiles().get(0).getType());
-        
-        UserInterface ui = new UserInterface(duel);
-        
-        SwingUtilities.invokeLater(ui);
+
+        Game game = new Game();
+        game.play();
+
     }
-    
-    
+
 }
