@@ -53,6 +53,48 @@ public class Canvas extends JPanel{
             
         }
         
+        BufferedImage neutralFarm = null;
+        try {
+            neutralFarm = ImageIO.read(new File("images/neutralFarm.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage neutralOutpost = null;
+        try {
+            neutralOutpost = ImageIO.read(new File("images/neutralOutpost.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage redHQ = null;
+        try {
+            redHQ = ImageIO.read(new File("images/redHQ.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage roadVertical = null;
+        try {
+            roadVertical = ImageIO.read(new File("images/roadVertical.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage roadUpRightDown = null;
+        try {
+            roadUpRightDown = ImageIO.read(new File("images/roadUpRightDown.png"));
+        } catch (IOException ex) {
+            
+        }
+        
+        BufferedImage roadHorizontal = null;
+        try {
+            roadHorizontal = ImageIO.read(new File("images/roadHorizontal.png"));
+        } catch (IOException ex) {
+            
+        }
+        
 //        this.scenario.getMap().getNumberOFRows();
         
         graphics.drawImage(plains, 0, 0, this);
@@ -80,8 +122,26 @@ public class Canvas extends JPanel{
                         imageToDraw = mountains;
                     }
                     
-                    if (tile.getType() == TileType.NEUTRALMINE) {
+                    if (tile.getType() == TileType.MINENEUTRAL) {
                         imageToDraw = neutralMine;
+                    }
+                    if (tile.getType() == TileType.FARMNEUTRAL) {
+                        imageToDraw = neutralFarm;
+                    }
+                    if (tile.getType() == TileType.OUTPOSTNEUTRAL) {
+                        imageToDraw = neutralFarm;
+                    }
+                    if (tile.getType() == TileType.REDHQ) {
+                        imageToDraw = redHQ;
+                    }
+                    if (tile.getType() == TileType.ROADVERTICAL) {
+                        imageToDraw = roadVertical;
+                    }
+                    if (tile.getType() == TileType.ROADUPRIGHTDOWN) {
+                        imageToDraw = roadUpRightDown;
+                    }
+                    if (tile.getType() == TileType.ROADHORIZONTAL) {
+                        imageToDraw = roadHorizontal;
                     }
                     
                     if (imageToDraw != null) {

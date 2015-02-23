@@ -10,7 +10,7 @@ public class Duel  {
     private Player playder2;
     
     
-    // tÃ¤mÃ¤ on alkuun ainoa kartta
+    // tÃƒÂ¤mÃƒÂ¤ on alkuun ainoa kartta
     
     
     public Duel(Player player1, Player playder2) {
@@ -57,7 +57,7 @@ public class Duel  {
 //        Tile tile15 = new Tile(15, 0, TileType.PLAINS);
 //        this.map.addTile(tile15);
         
-        String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfp";
+        String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222";
         
         int x = 0;
         int y = 0;
@@ -66,20 +66,38 @@ public class Duel  {
                 y++;
                 x = 0;
             }
-            char a = mapAsString.charAt(i);
+            char tileTypeID = mapAsString.charAt(i);
             TileType typeToBe = null;
             
-            if (a == 'p') {
+            if (tileTypeID == 'p') {
                 typeToBe = TileType.PLAINS;
             }
-            if (a == 'f') {
+            if (tileTypeID == 'f') {
                 typeToBe = TileType.FOREST;
             }
-            if (a == 'm') {
+            if (tileTypeID == 'm') {
                 typeToBe = TileType.MOUNTAINS;
             }
-            if (a == 'q') {
-                typeToBe = TileType.NEUTRALMINE;
+            if (tileTypeID == 'q') {
+                typeToBe = TileType.MINENEUTRAL;
+            }
+            if (tileTypeID == 'a') {
+                typeToBe = TileType.FARMNEUTRAL;
+            }
+            if (tileTypeID == 'z') {
+                typeToBe = TileType.OUTPOSTNEUTRAL;
+            }
+            if (tileTypeID == 'r') {
+                typeToBe = TileType.REDHQ;
+            }
+            if (tileTypeID == '1') {
+                typeToBe = TileType.ROADVERTICAL;
+            }
+            if (tileTypeID == '2') {
+                typeToBe = TileType.ROADHORIZONTAL;
+            }
+            if (tileTypeID == '3') {
+                typeToBe = TileType.ROADUPRIGHTDOWN;
             }
             
             Tile tile = new Tile (x,y, typeToBe);

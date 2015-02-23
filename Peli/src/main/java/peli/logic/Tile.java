@@ -39,7 +39,7 @@ public class Tile {
             this.movement = 3;
             this.defence = 0.3;
 
-        } else if (t.equals(TileType.NEUTRALMINE)) {
+        } else if (t.equals(TileType.MINENEUTRAL)) {
             this.movement = 3;
             this.defence = 0.3;
 
