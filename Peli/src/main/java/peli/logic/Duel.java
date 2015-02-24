@@ -8,7 +8,8 @@ public class Duel  {
     private Map map;
     private Player player1;
     private Player player2;
-    
+    private Unit selectedUnit;
+    private Tile selectedTile;
     
     // tÃƒÂ¤mÃƒÂ¤ on alkuun ainoa kartta
     
@@ -17,6 +18,8 @@ public class Duel  {
         this.map = new Map(20, 20);
         this.player1 = player1;
         this.player2 = playder2;
+        this.selectedTile = null;
+        this.selectedUnit = null;
         
     }
 
@@ -115,6 +118,14 @@ public class Duel  {
 
     public Player getPlayer2() {
         return player2;
+    }
+
+    public void setSelectedTile(Tile selectedTile) {
+        this.selectedTile = selectedTile;
+    }
+
+    public void setSelectedUnit(Unit selectedUnit) {
+        this.selectedUnit = selectedUnit;
     }
     
     

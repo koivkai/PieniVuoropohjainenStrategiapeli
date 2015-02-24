@@ -1,0 +1,73 @@
+
+
+package peli.ui; 
+
+import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import peli.logic.Duel;
+import peli.logic.Tile;
+import peli.logic.Unit;
+
+ 
+public class ClickDetector implements MouseListener {
+    
+    private Duel duel;
+    private Component component;
+
+    public ClickDetector(Duel duel, Component component) {
+        this.duel = duel;
+        this.component = component;
+    }
+    
+    
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        System.out.println(x);
+        System.out.println(y);
+        
+        Unit selectedUnit = null;
+        Tile selectedTile = null;
+        
+        for (Unit unit: this.duel.getPlayer1().getArmy().getUnits()) {
+            Tile unitsTile = unit.getTile();
+            if (unitsTile.getUiX() <= x && unitsTile.getUiX() + 39 >= x) {
+                selectedUnit = unit;
+                
+                System.out.println("found unit!");
+            }
+        }
+        
+        Unit unit = this.duel.getPlayer1().getArmy().getUnits().get(0);
+        Tile tile = this.duel.getMap().getTiles().get(9);
+        unit.setTile(tile);
+        this.component.repaint();
+        
+    }
+//   && unitsTile.getUiY() >= y && unitsTile.getUiY() +39 <= y
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
+
+   
+
+} 

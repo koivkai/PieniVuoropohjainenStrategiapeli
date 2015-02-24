@@ -8,7 +8,9 @@ public class Unit {
     private double HP;
     private Tile tile;
     private Player player; //owner
-    String name;
+    private boolean hasMoved;
+    private boolean hasAttacked;
+    private String name;
 
 
     public Unit(int MP, double Defence, double Attack, double HP, Tile tile, String name) {
@@ -18,6 +20,8 @@ public class Unit {
         this.HP = HP;
         this.tile = tile;
         this.name = name;
+        this.hasAttacked = false;
+        this.hasMoved = false;
     }
 
     /**
@@ -96,6 +100,12 @@ public class Unit {
     public String getName() {
         return name;
     }
+
+    public void setTile(Tile tile) {
+        this.tile = tile;
+    }
+    
+    
     
     
     

@@ -17,7 +17,7 @@ public class Canvas extends JPanel {
         super.setBackground(Color.WHITE);
         this.duel = duel;
     }
-
+             
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
@@ -33,9 +33,9 @@ public class Canvas extends JPanel {
         try {
             forest = ImageIO.read(new File("images/Forest.png"));
         } catch (IOException ex) {
-
+            
         }
-
+        
         BufferedImage mountains = null;
         try {
             mountains = ImageIO.read(new File("images/mountainsTile.png"));

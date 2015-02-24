@@ -31,7 +31,7 @@ public class UserInterface implements Runnable {
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
-        
+        frame.setResizable(false);
         
 
         createComponents(frame.getContentPane());
@@ -44,6 +44,7 @@ public class UserInterface implements Runnable {
     private void createComponents(Container container) {
         canvas = new Canvas(this.duel);
         container.add(canvas);
+        frame.addMouseListener(new ClickDetector(this.duel, container));
     }
 
     
