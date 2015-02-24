@@ -36,11 +36,20 @@ public class ClickDetector implements MouseListener {
             Tile unitsTile = unit.getTile();
             if (unitsTile.getUiX() <= x && unitsTile.getUiX() + 39 >= x) {
                 selectedUnit = unit;
-                
+                this.duel.setSelectedUnit(unit);
+                this.duel.setSelectedTile(null);
                 System.out.println("found unit!");
             }
         }
         
+        if (this.duel.getSelectedUnit() != null) {
+            for (Tile tile: this.duel.getMap().getTiles()) {
+                if (tile.getUiX() <= x && tile.getUiX() +39 >= x) {
+                    
+                }
+            }
+        }
+         
         Unit unit = this.duel.getPlayer1().getArmy().getUnits().get(0);
         Tile tile = this.duel.getMap().getTiles().get(9);
         unit.setTile(tile);

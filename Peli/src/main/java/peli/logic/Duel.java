@@ -127,6 +127,14 @@ public class Duel  {
     public void setSelectedUnit(Unit selectedUnit) {
         this.selectedUnit = selectedUnit;
     }
+
+    public Tile getSelectedTile() {
+        return selectedTile;
+    }
+
+    public Unit getSelectedUnit() {
+        return selectedUnit;
+    }
     
     
     
