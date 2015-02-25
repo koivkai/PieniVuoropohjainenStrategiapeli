@@ -41,6 +41,9 @@ public class Tile {
             this.movement = 3;
             this.defence = 0.3;
 
+        } else {
+            this.movement = 1;
+            this.defence = 0.1;
         }
         this.type = t;
     }
@@ -73,6 +76,15 @@ public class Tile {
         return uiY;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+    
+    
     
 
 }

@@ -27,12 +27,12 @@ public class Duel {
 
         String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222224pfppppppp1ppppppppp1pffffpmpf1ppfffffpp322225pmpf1apfqmqf627pppf1pmpf1ppfffff1pppppf1pmpp1ppppppq1pfffff1pmmp1fffffp1qpppppp1ppmp1fppppp1fffffpp1fpmp1fppp627fqmqfpa1fpmp822224ppfffffpp1fpmpffffp1ppppppppp1pppppppfp32222222224pppapappz1zppfmfppp1appppppppbpppfmfpqmzmppqmqppafappfmfppppqpfffffpqmqppfmfpppppp";
 
-        int x = 0;
-        int y = 0;
+        int x = 1;
+        int y = 1;
         for (int i = 0; i < mapAsString.length(); i++) {
-            if (x == this.map.getRowLength() + 1) {
+            if (x == 21) {
                 y++;
-                x = 0;
+                x = 1;
             }
             char tileTypeID = mapAsString.charAt(i);
             TileType typeToBe = null;

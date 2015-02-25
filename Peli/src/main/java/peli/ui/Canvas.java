@@ -15,12 +15,16 @@ public class Canvas extends JPanel {
     private Duel duel;
     private JButton endTurnButton;
     private JButton captureButton;
+    private JButton buildButton;
+    private JButton attackButton;
 
-    public Canvas(Duel duel, JButton endTurnButton, JButton captureButton) {
+    public Canvas(Duel duel, JButton endTurnButton, JButton captureButton, JButton buildButton, JButton attackButton) {
         super.setBackground(Color.WHITE);
         this.duel = duel;
         this.endTurnButton = endTurnButton;
         this.captureButton = captureButton;
+        this.buildButton = buildButton;
+        this.attackButton = attackButton;
     }
 
     @Override
@@ -135,8 +139,7 @@ public class Canvas extends JPanel {
 
         }
 
-//        this.scenario.getMap().getNumberOFRows();
-        graphics.drawImage(plains, 0, 0, this);
+
 
         int y = 0;
         int t = 0;
@@ -302,7 +305,6 @@ public class Canvas extends JPanel {
         } catch (IOException ex) {
 
         }
-        graphics.drawImage(UnitBlueSpearman, 0, 0, this);
 
         for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) {
             BufferedImage unitImage = null;
@@ -331,6 +333,8 @@ public class Canvas extends JPanel {
         }
         this.endTurnButton.repaint();
         this.captureButton.repaint();
+        this.buildButton.repaint();
+        this.attackButton.repaint();
     }
 
 }
