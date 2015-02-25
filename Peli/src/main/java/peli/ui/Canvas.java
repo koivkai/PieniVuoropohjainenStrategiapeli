@@ -209,6 +209,33 @@ public class Canvas extends JPanel {
             y = y + 40;
 
         }
+        
+        BufferedImage redFarm = null;
+        try {
+            redFarm = ImageIO.read(new File("images/redFarm.png"));
+        } catch (IOException ex) {
+
+        }
+        
+        BufferedImage blueFarm = null;
+        try {
+            blueFarm = ImageIO.read(new File("images/blueFarm.png"));
+        } catch (IOException ex) {
+
+        }
+        
+        for (Building building: this.duel.getBuildings().getBuildings()) {
+            BufferedImage buildingImage = null;
+            if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+                buildingImage = blueFarm;
+            }
+            else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+                buildingImage = redFarm;
+            }
+            if (buildingImage != null) {
+                graphics.drawImage(buildingImage, building.getTile().getUiX(), building.getTile().getUiY(), this);
+            }
+        }
 
         BufferedImage UnitBlueSpearman = null;
         try {
@@ -250,6 +277,10 @@ public class Canvas extends JPanel {
             }
             
         }
+        
+        
+        
+        
     }
 
 }

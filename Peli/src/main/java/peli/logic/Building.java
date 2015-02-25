@@ -4,20 +4,18 @@ import java.util.*;
 
 public class Building {
 
-    private int x;
-    private int y;
     private String nimi;
     private Player player; // owner
     private ArrayList<Buildable> availableUnits;
     private int goldIncome;
     private int supply;
+    private Tile tile;
 
-    public Building(int x, int y, String nimi, Player player) {
-        this.x = x;
-        this.y = y;
+    public Building(String nimi, Player player, Tile tile) {
         this.nimi = nimi;
         this.player = player;
         this.availableUnits = new ArrayList<Buildable>();
+        this.tile = tile;
     }
 
     public void setPlayer(Player player) {
@@ -31,7 +29,17 @@ public class Building {
     public int getSupply() {
         return supply;
     }
-    
-    
+
+    public Tile getTile() {
+        return tile;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public String getNimi() {
+        return nimi;
+    }
 
 }

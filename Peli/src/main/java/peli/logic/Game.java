@@ -18,13 +18,17 @@ public class Game {
         duel.setUpScenario();
         
         Unit unit = new Unit(3, 0.2, 5.0, 20.0, duel.getMap().getTiles().get(5), "Spearman");
-        Unit unit2 = new Unit(3, 0.2, 5.0, 20.0, duel.getMap().getTiles().get(4), "Spearman");
+        Unit unit2 = new Unit(3, 0.2, 5.0, 20.0, duel.getMap().getTiles().get(60), "Spearman");
         Unit unit3 = new Unit(3, 0.2, 5.0, 20.0, duel.getMap().getTiles().get(93), "Spearman");
         
         p1.addUnit(unit);
         p1.addUnit(unit3);
         p2.addUnit(unit2);
         
+        Building blueFarmTest1 = new Building ("Farm", p1, duel.getMap().getTiles().get(61));
+        Building redFarmTest1 = new Building ("Farm", p2, duel.getMap().getTiles().get(143));
+        duel.getBuildings().addBuilding(blueFarmTest1);
+        duel.getBuildings().addBuilding(redFarmTest1);
         
 
         UserInterface ui = new UserInterface(duel);
