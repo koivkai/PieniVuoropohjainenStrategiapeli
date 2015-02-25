@@ -186,25 +186,25 @@ public class Duel {
 
         Building building31 = new Building("Outpost", null, map.getTiles().get(357));
         this.buildings.addBuilding(building31);
-        
+
         Building building32 = new Building("Mine", null, map.getTiles().get(361));
         this.buildings.addBuilding(building32);
-        
+
         Building building33 = new Building("Mine", null, map.getTiles().get(363));
         this.buildings.addBuilding(building33);
-        
+
         Building building34 = new Building("Farm", player1, map.getTiles().get(366));
         this.buildings.addBuilding(building34);
-        
+
         Building building35 = new Building("Farm", player1, map.getTiles().get(368));
         this.buildings.addBuilding(building35);
-        
+
         Building building36 = new Building("Mine", null, map.getTiles().get(378));
         this.buildings.addBuilding(building36);
-        
+
         Building building37 = new Building("Mine", player1, map.getTiles().get(386));
         this.buildings.addBuilding(building37);
-        
+
         Building building38 = new Building("Mine", player1, map.getTiles().get(388));
         this.buildings.addBuilding(building38);
     }

@@ -1,22 +1,19 @@
-
-
-package peli.logic; 
+package peli.logic;
 
 import java.util.*;
 
- 
-public class Map { 
+public class Map {
 
-   private int rowLength;
-   private int numberOFRows;
-   private ArrayList<Tile> Tiles;
+    private int rowLength;
+    private int numberOFRows;
+    private ArrayList<Tile> Tiles;
 
     public Map(int rowLength, int numberOfRows) {
         this.rowLength = rowLength;
         this.numberOFRows = numberOfRows;
         this.Tiles = new ArrayList<>();
     }
-    
+
     public void addTile(Tile tile) {
         this.Tiles.add(tile);
     }
@@ -32,14 +29,5 @@ public class Map {
     public ArrayList<Tile> getTiles() {
         return this.Tiles;
     }
-    
-    
-    
-    
-    
-    
-   
-   
-   
 
-} 
+}

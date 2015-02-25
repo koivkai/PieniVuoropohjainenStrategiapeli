@@ -1,6 +1,4 @@
-
-
-package peli.ui; 
+package peli.ui;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -10,9 +8,8 @@ import peli.logic.Duel;
 import peli.logic.Tile;
 import peli.logic.Unit;
 
- 
 public class CaptureListener implements ActionListener {
-    
+
     private Duel duel;
     private Component component;
 
@@ -21,28 +18,22 @@ public class CaptureListener implements ActionListener {
         this.component = component;
     }
 
-    
-    
-    
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         if (this.duel.getSelectedUnit() != null) {
             Unit unit = this.duel.getSelectedUnit();
             Tile tile = unit.getTile();
-            
-            for (Building building: this.duel.getBuildings().getBuildings()) {
+
+            for (Building building : this.duel.getBuildings().getBuildings()) {
                 if (building.getTile() == unit.getTile()) {
                     building.setPlayer(this.duel.getPlayerWhoseTurnItIs());
                     System.out.println("Capture success!");
                 }
             }
         }
-        
+
         this.component.repaint();
     }
 
-   
-
-} 
+}

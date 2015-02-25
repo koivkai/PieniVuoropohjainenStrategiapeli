@@ -45,7 +45,7 @@ public class ClickDetector implements MouseListener {
                     this.duel.setSelectedUnit(unit);
                     this.duel.setSelectedTile(null);
                     this.duel.setSelectedBuilding(null);
-                    
+
                     System.out.println("found unit! UIx = " + unitsTile.getUiX() + "UIy = " + unitsTile.getUiY() + " x = " + unitsTile.getX() + " y = " + unitsTile.getY());
                 }
             }
@@ -60,11 +60,11 @@ public class ClickDetector implements MouseListener {
                     this.duel.setSelectedBuilding(null);
                 }
             }
-        } 
-        
-        if (this.duel.getSelectedUnit() == null){
-            for (Building building: this.duel.getBuildings().getBuildings()) {
-                Tile tile = building.getTile(); 
+        }
+
+        if (this.duel.getSelectedUnit() == null) {
+            for (Building building : this.duel.getBuildings().getBuildings()) {
+                Tile tile = building.getTile();
                 if (tile.getUiX() <= x && tile.getUiX() + 39 >= x && tile.getUiY() + 25 <= y && tile.getUiY() + 65 >= y) {
                     System.out.println("Found Building!");
                     this.duel.setSelectedBuilding(building);

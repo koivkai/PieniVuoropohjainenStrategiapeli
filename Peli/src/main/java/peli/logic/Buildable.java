@@ -10,6 +10,7 @@ package peli.logic;
  * @author Kaius
  */
 public class Buildable {
+
     private Unit unit;
     private int cost;
 
@@ -17,7 +18,5 @@ public class Buildable {
         this.unit = unit;
         this.cost = cost;
     }
-    
-    
-    
+
 }

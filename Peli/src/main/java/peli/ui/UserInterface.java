@@ -30,17 +30,15 @@ public class UserInterface implements Runnable {
         frame.setPreferredSize(new Dimension(1200, 830));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        
+
         frame.setResizable(false);
-        
 
         createComponents(frame.getContentPane());
-        
 
         frame.pack();
         frame.setVisible(true);
     }
-    
+
     private void createComponents(Container container) {
         container.setLayout(null);
         JButton endTurnButton = new JButton("End Turn");
@@ -58,7 +56,7 @@ public class UserInterface implements Runnable {
         canvas = new Canvas(this.duel, endTurnButton, captureButton, buildButton, attackButton);
         canvas.setBounds(0, 0, 1200, 840);
         container.add(canvas);
-        
+
         endTurnButton.setBounds(1050, 650, 100, 50);
         captureButton.setBounds(1050, 330, 100, 50);
         buildButton.setBounds(50, 330, 100, 50);
@@ -68,10 +66,7 @@ public class UserInterface implements Runnable {
         container.add(buildButton);
         container.add(attackButton);
         frame.addMouseListener(new ClickDetector(this.duel, container));
-        
-        
-    }
 
-    
+    }
 
 }

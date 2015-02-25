@@ -139,8 +139,6 @@ public class Canvas extends JPanel {
 
         }
 
-
-
         int y = 0;
         int t = 0;
         for (int i = 0; i < 20; i++) {
@@ -285,8 +283,7 @@ public class Canvas extends JPanel {
             } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.duel.getPlayer1()) {
                 buildingImage = blueHQ;
             }
-            
-            
+
             if (buildingImage != null) {
                 graphics.drawImage(buildingImage, building.getTile().getUiX(), building.getTile().getUiY(), this);
             }
