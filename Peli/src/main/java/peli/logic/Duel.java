@@ -12,6 +12,7 @@ public class Duel  {
     private Tile selectedTile;
     private Building selectedBuilding;
     private BuildingList buildings;
+    private Player playerWhoseTurnItIs;
     
     // tÃƒÂ¤mÃƒÂ¤ on alkuun ainoa kartta
     
@@ -23,6 +24,7 @@ public class Duel  {
         this.selectedTile = null;
         this.selectedUnit = null;
         this.buildings = new BuildingList();
+        this.playerWhoseTurnItIs = player1;
         
     }
 
@@ -150,6 +152,15 @@ public class Duel  {
     public void setSelectedBuilding(Building selectedBuilding) {
         this.selectedBuilding = selectedBuilding;
     }
+
+    public Player getPlayerWhoseTurnItIs() {
+        return playerWhoseTurnItIs;
+    }
+
+    public void setPlayerWhoseTurnItIs(Player playerWhoseTurnItIs) {
+        this.playerWhoseTurnItIs = playerWhoseTurnItIs;
+    }
+    
     
     
     

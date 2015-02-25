@@ -6,16 +6,19 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import peli.logic.*;
 
 public class Canvas extends JPanel {
 
     private Duel duel;
+    private JButton endTurnButton;
 
-    public Canvas(Duel duel) {
+    public Canvas(Duel duel , JButton endTurnButton) {
         super.setBackground(Color.WHITE);
         this.duel = duel;
+        this.endTurnButton = endTurnButton;
     }
              
     @Override
@@ -277,10 +280,7 @@ public class Canvas extends JPanel {
             }
             
         }
-        
-        
-        
-        
+      this.endTurnButton.repaint();
     }
 
 }

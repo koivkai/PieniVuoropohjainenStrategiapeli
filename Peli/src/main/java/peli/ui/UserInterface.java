@@ -42,9 +42,19 @@ public class UserInterface implements Runnable {
     }
     
     private void createComponents(Container container) {
-        canvas = new Canvas(this.duel);
+        container.setLayout(null);
+        JButton endTurnButton = new JButton("End Turn");
+        EndOfTurnListener endOfTurnListener = new EndOfTurnListener(this.duel);
+        endTurnButton.addActionListener(endOfTurnListener);
+        canvas = new Canvas(this.duel, endTurnButton);
+        canvas.setBounds(0, 0, 1200, 840);
         container.add(canvas);
+        
+        endTurnButton.setBounds(1050, 650, 100, 50);
+        container.add(endTurnButton);
         frame.addMouseListener(new ClickDetector(this.duel, container));
+        
+        
     }
 
     
