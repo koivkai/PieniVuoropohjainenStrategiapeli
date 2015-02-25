@@ -32,27 +32,31 @@ public class ClickDetector implements MouseListener {
         Unit selectedUnit = null;
         Tile selectedTile = null;
         
-        for (Unit unit: this.duel.getPlayer1().getArmy().getUnits()) {
+        if (this.duel.getSelectedUnit() == null) {
+            for (Unit unit: this.duel.getPlayer1().getArmy().getUnits()) {
             Tile unitsTile = unit.getTile();
-            if (unitsTile.getUiX() <= x && unitsTile.getUiX() + 39 >= x) {
+            if (unitsTile.getUiX() <= x && unitsTile.getUiX() + 39 >= x && unitsTile.getUiY() +25 <= y && unitsTile.getUiY() +65 >= y) {
                 selectedUnit = unit;
                 this.duel.setSelectedUnit(unit);
                 this.duel.setSelectedTile(null);
-                System.out.println("found unit!");
-            }
+                System.out.println("found unit! x = " + unitsTile.getUiX() +"y = " + unitsTile.getUiY());
+            } 
+        }
         }
         
-        if (this.duel.getSelectedUnit() != null) {
+        
+        else if (this.duel.getSelectedUnit() != null) {
             for (Tile tile: this.duel.getMap().getTiles()) {
-                if (tile.getUiX() <= x && tile.getUiX() +39 >= x) {
-                    
+                if (tile.getUiX() <= x && tile.getUiX() + 39 >= x && tile.getUiY() +25 <= y && tile.getUiY() +65 >= y) {
+                    System.out.println("Found Tile! x = " + tile.getUiX() +" y = " + tile.getUiY());
+                      this.duel.setSelectedTile(tile);
+                      this.duel.getSelectedUnit().setTile(tile);
+                      this.duel.setSelectedUnit(null);
                 }
             }
         }
          
-        Unit unit = this.duel.getPlayer1().getArmy().getUnits().get(0);
-        Tile tile = this.duel.getMap().getTiles().get(9);
-        unit.setTile(tile);
+        
         this.component.repaint();
         
     }
