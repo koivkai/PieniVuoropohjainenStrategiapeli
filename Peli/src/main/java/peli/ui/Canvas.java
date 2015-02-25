@@ -332,6 +332,32 @@ public class Canvas extends JPanel {
         this.captureButton.repaint();
         this.buildButton.repaint();
         this.attackButton.repaint();
+
+        if (this.duel.getWinner() != null) {
+            BufferedImage winScreen = null;
+
+            if (this.duel.getWinner() == this.duel.getPlayer1()) {
+                BufferedImage player1WinScreen = null;
+                try {
+                    player1WinScreen = ImageIO.read(new File("images/player1WinScreen.png"));
+                } catch (IOException ex) {
+
+                }
+                winScreen = player1WinScreen;
+            }
+            
+            else {
+                BufferedImage player2WinScreen = null;
+                try {
+                    player2WinScreen = ImageIO.read(new File("images/player2WinScreen.png"));
+                } catch (IOException ex) {
+
+                }
+                winScreen = player2WinScreen;
+            }
+            
+            graphics.drawImage(winScreen, 0, 0, this);
+        }
     }
 
 }

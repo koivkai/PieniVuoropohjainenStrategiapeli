@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import peli.logic.Building;
 import peli.logic.Duel;
 import peli.logic.Tile;
+import peli.logic.TileType;
 import peli.logic.Unit;
 
 public class CaptureListener implements ActionListener {
@@ -29,6 +30,11 @@ public class CaptureListener implements ActionListener {
                 if (building.getTile() == unit.getTile()) {
                     building.setPlayer(this.duel.getPlayerWhoseTurnItIs());
                     System.out.println("Capture success!");
+                    if (building.getTile().getType() == TileType.REDHQ && this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
+                        this.duel.setWinner(this.duel.getPlayer1());
+                    } else if (building.getTile().getType() == TileType.BLUEHQ && this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer2()) {
+                        this.duel.setWinner(this.duel.getPlayer2());
+                    }
                 }
             }
         }

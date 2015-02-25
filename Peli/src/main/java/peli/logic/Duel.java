@@ -10,6 +10,7 @@ public class Duel {
     private Building selectedBuilding;
     private BuildingList buildings;
     private Player playerWhoseTurnItIs;
+    private Player winner;
 
     // tÃƒÂ¤mÃƒÂ¤ on alkuun ainoa kartta
     public Duel(Player player1, Player playder2) {
@@ -20,6 +21,7 @@ public class Duel {
         this.selectedUnit = null;
         this.buildings = new BuildingList();
         this.playerWhoseTurnItIs = player1;
+        this.winner = null;
 
     }
 
@@ -265,5 +267,15 @@ public class Duel {
     public void setPlayerWhoseTurnItIs(Player playerWhoseTurnItIs) {
         this.playerWhoseTurnItIs = playerWhoseTurnItIs;
     }
+
+    public void setWinner(Player winner) {
+        this.winner = winner;
+    }
+
+    public Player getWinner() {
+        return winner;
+    }
+    
+    
 
 }
