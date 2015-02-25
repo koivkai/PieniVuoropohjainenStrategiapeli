@@ -24,13 +24,7 @@ public class Game {
         p1.addUnit(unit);
         p1.addUnit(unit3);
         p2.addUnit(unit2);
-        
-        Building blueFarmTest1 = new Building ("Farm", p1, duel.getMap().getTiles().get(61));
-        Building redFarmTest1 = new Building ("Farm", p2, duel.getMap().getTiles().get(143));
-        duel.getBuildings().addBuilding(blueFarmTest1);
-        duel.getBuildings().addBuilding(redFarmTest1);
-        
-
+ 
         UserInterface ui = new UserInterface(duel);
 
         SwingUtilities.invokeLater(ui);

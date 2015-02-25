@@ -35,10 +35,11 @@ public class CaptureListener implements ActionListener {
             for (Building building: this.duel.getBuildings().getBuildings()) {
                 if (building.getTile() == unit.getTile()) {
                     building.setPlayer(this.duel.getPlayerWhoseTurnItIs());
+                    System.out.println("Capture success!");
                 }
             }
         }
-        System.out.println("Capture!");
+        
         this.component.repaint();
     }
 

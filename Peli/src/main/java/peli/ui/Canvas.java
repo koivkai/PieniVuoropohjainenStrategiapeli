@@ -16,13 +16,13 @@ public class Canvas extends JPanel {
     private JButton endTurnButton;
     private JButton captureButton;
 
-    public Canvas(Duel duel , JButton endTurnButton, JButton captureButton) {
+    public Canvas(Duel duel, JButton endTurnButton, JButton captureButton) {
         super.setBackground(Color.WHITE);
         this.duel = duel;
         this.endTurnButton = endTurnButton;
         this.captureButton = captureButton;
     }
-             
+
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
@@ -38,9 +38,9 @@ public class Canvas extends JPanel {
         try {
             forest = ImageIO.read(new File("images/Forest.png"));
         } catch (IOException ex) {
-            
+
         }
-        
+
         BufferedImage mountains = null;
         try {
             mountains = ImageIO.read(new File("images/mountainsTile.png"));
@@ -214,29 +214,76 @@ public class Canvas extends JPanel {
             y = y + 40;
 
         }
-        
+
         BufferedImage redFarm = null;
         try {
             redFarm = ImageIO.read(new File("images/redFarm.png"));
         } catch (IOException ex) {
 
         }
-        
+
         BufferedImage blueFarm = null;
         try {
             blueFarm = ImageIO.read(new File("images/blueFarm.png"));
         } catch (IOException ex) {
 
         }
-        
-        for (Building building: this.duel.getBuildings().getBuildings()) {
+
+        BufferedImage blueMine = null;
+        try {
+            blueMine = ImageIO.read(new File("images/blueMine.png"));
+        } catch (IOException ex) {
+
+        }
+
+        BufferedImage redMine = null;
+        try {
+            redMine = ImageIO.read(new File("images/redMine.png"));
+        } catch (IOException ex) {
+
+        }
+
+        BufferedImage blueOutpost = null;
+        try {
+            blueOutpost = ImageIO.read(new File("images/blueOutpost.png"));
+        } catch (IOException ex) {
+
+        }
+
+        BufferedImage redOutpost = null;
+        try {
+            redOutpost = ImageIO.read(new File("images/redOutpost.png"));
+        } catch (IOException ex) {
+
+        }
+
+        for (Building building : this.duel.getBuildings().getBuildings()) {
             BufferedImage buildingImage = null;
             if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
                 buildingImage = blueFarm;
-            }
-            else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+            } else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
                 buildingImage = redFarm;
+            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+                buildingImage = blueMine;
+            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+                buildingImage = redMine;
+            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+                buildingImage = blueOutpost;
+            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+                buildingImage = redOutpost;
+            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == null) {
+                buildingImage = neutralOutpost;
+            } else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == null) {
+                buildingImage = neutralFarm;
+            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == null) {
+                buildingImage = neutralMine;
+            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.duel.getPlayer2()) {
+                buildingImage = redHQ;
+            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.duel.getPlayer1()) {
+                buildingImage = blueHQ;
             }
+            
+            
             if (buildingImage != null) {
                 graphics.drawImage(buildingImage, building.getTile().getUiX(), building.getTile().getUiY(), this);
             }
@@ -248,7 +295,7 @@ public class Canvas extends JPanel {
         } catch (IOException ex) {
 
         }
-        
+
         BufferedImage UnitRedSpearman = null;
         try {
             UnitRedSpearman = ImageIO.read(new File("images/UnitRedSpearman.png"));
@@ -256,34 +303,34 @@ public class Canvas extends JPanel {
 
         }
         graphics.drawImage(UnitBlueSpearman, 0, 0, this);
-        
-        for (Unit unit:this.duel.getPlayer1().getArmy().getUnits()) {
+
+        for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) {
             BufferedImage unitImage = null;
-            
+
             if (unit.getName().equals("Spearman")) {
                 unitImage = UnitBlueSpearman;
             }
-            
+
             if (unitImage != null) {
-              graphics.drawImage(unitImage, unit.getTile().getUiX(), unit.getTile().getUiY(), this);  
+                graphics.drawImage(unitImage, unit.getTile().getUiX(), unit.getTile().getUiY(), this);
             }
-            
+
         }
-        
-        for (Unit unit:this.duel.getPlayer2().getArmy().getUnits()) {
+
+        for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) {
             BufferedImage unitImage = null;
-            
+
             if (unit.getName().equals("Spearman")) {
                 unitImage = UnitRedSpearman;
             }
-            
+
             if (unitImage != null) {
-              graphics.drawImage(unitImage, unit.getTile().getUiX(), unit.getTile().getUiY(), this);  
+                graphics.drawImage(unitImage, unit.getTile().getUiX(), unit.getTile().getUiY(), this);
             }
-            
+
         }
-      this.endTurnButton.repaint();
-      this.captureButton.repaint();
+        this.endTurnButton.repaint();
+        this.captureButton.repaint();
     }
 
 }

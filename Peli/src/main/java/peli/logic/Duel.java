@@ -102,6 +102,43 @@ public class Duel  {
     
     public void placeBuildings() {
         
+        Building building1 = new Building ("Mine", player2, map.getTiles().get(11));
+        this.buildings.addBuilding(building1);
+        
+        Building building2 = new Building ("Mine", player2, map.getTiles().get(13));
+        this.buildings.addBuilding(building2);
+        
+        Building building3 = new Building ("Mine", null, map.getTiles().get(21));
+        this.buildings.addBuilding(building3);
+        
+        Building building4 = new Building ("Farm", player2, map.getTiles().get(31));
+        this.buildings.addBuilding(building4); 
+        
+        Building building5 = new Building ("Farm", player2, map.getTiles().get(33));
+        this.buildings.addBuilding(building5);
+        
+        Building building6 = new Building ("Farm", null, map.getTiles().get(36));
+        this.buildings.addBuilding(building6);
+        
+        Building building7 = new Building ("Farm", null, map.getTiles().get(38));
+        this.buildings.addBuilding(building7);
+        
+        Building building8 = new Building ("Outpost", null, map.getTiles().get(42));
+        this.buildings.addBuilding(building8);
+        
+        Building building9 = new Building ("Mine", null, map.getTiles().get(44));
+        this.buildings.addBuilding(building9);
+        
+        Building building10 = new Building ("HQ", player2, map.getTiles().get(52));
+        this.buildings.addBuilding(building10);
+        
+        Building building11 = new Building ("Farm", null, map.getTiles().get(61));
+        this.buildings.addBuilding(building11);
+        
+        
+        
+        
+        
     }
 
     
@@ -111,6 +148,7 @@ public class Duel  {
 
     public void setUpScenario() {
         buildMap();
+        placeBuildings();
     }
 
     public Map getMap() {
