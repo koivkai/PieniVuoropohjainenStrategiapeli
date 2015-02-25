@@ -27,7 +27,7 @@ public class UserInterface implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("PieniVuoropohjainenStrategiapeli");
-        frame.setPreferredSize(new Dimension(1200, 840));
+        frame.setPreferredSize(new Dimension(1200, 830));
 
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
@@ -44,14 +44,19 @@ public class UserInterface implements Runnable {
     private void createComponents(Container container) {
         container.setLayout(null);
         JButton endTurnButton = new JButton("End Turn");
+        JButton captureButton = new JButton("Capture");
         EndOfTurnListener endOfTurnListener = new EndOfTurnListener(this.duel);
+        CaptureListener captureLister = new CaptureListener(this.duel, container);
         endTurnButton.addActionListener(endOfTurnListener);
-        canvas = new Canvas(this.duel, endTurnButton);
+        captureButton.addActionListener(captureLister);
+        canvas = new Canvas(this.duel, endTurnButton, captureButton);
         canvas.setBounds(0, 0, 1200, 840);
         container.add(canvas);
         
         endTurnButton.setBounds(1050, 650, 100, 50);
+        captureButton.setBounds(1050, 400, 100, 50);
         container.add(endTurnButton);
+        container.add(captureButton);
         frame.addMouseListener(new ClickDetector(this.duel, container));
         
         

@@ -14,11 +14,13 @@ public class Canvas extends JPanel {
 
     private Duel duel;
     private JButton endTurnButton;
+    private JButton captureButton;
 
-    public Canvas(Duel duel , JButton endTurnButton) {
+    public Canvas(Duel duel , JButton endTurnButton, JButton captureButton) {
         super.setBackground(Color.WHITE);
         this.duel = duel;
         this.endTurnButton = endTurnButton;
+        this.captureButton = captureButton;
     }
              
     @Override
@@ -281,6 +283,7 @@ public class Canvas extends JPanel {
             
         }
       this.endTurnButton.repaint();
+      this.captureButton.repaint();
     }
 
 }
