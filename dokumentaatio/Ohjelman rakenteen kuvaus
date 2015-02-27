@@ -1,2 +1,9 @@
 Ohjelman rakenteen kuvaus
 
+Main luokka luo GameMaker luokan ja käskee sen luoda varsinainen peli. Tavoittetaa saada main mahdollisimman pieneksi.
+GameMaker luo 2 pelaajaa ja niiden avulla Game:min. GameMaker laittaa Gamen alustamaan itsensä eli luomaan kartan rakennukset
+ja aloitusyksiköt. Game on pelin tärkein luokka joka pitää sisällään joko suoraan itsessään tai viitteenä toiseen olioon 
+kaiken mitä peliin kuuluu. Näin Game myös luo tavallaan rajapinnan (vaikkei olekaan rajapinta) jota Käyttöliittymä voi käyttää.
+Game:iin liitty kaksi pelaa, joihin kuhunkin liittyy Army. Army on vain Lista Uniteista, joita pelaaja omistaa. Unit kuvaa 
+yksikköä. Sillä on erilaisia arvoja kuten HitPoints ja Movement, jotka vaikuttavat sen toimintaan pelissä. Unit:iin liittyy aina
+Tile, koska Tilen, joka kuvaa maaston palaa, tyyppi vaikuttaa Unit:in Defenceen ja kertoo missä Unit on. 
