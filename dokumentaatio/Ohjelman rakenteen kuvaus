@@ -7,3 +7,8 @@ kaiken mitä peliin kuuluu. Näin Game myös luo tavallaan rajapinnan (vaikkei o
 Game:iin liitty kaksi pelaa, joihin kuhunkin liittyy Army. Army on vain Lista Uniteista, joita pelaaja omistaa. Unit kuvaa 
 yksikköä. Sillä on erilaisia arvoja kuten HitPoints ja Movement, jotka vaikuttavat sen toimintaan pelissä. Unit:iin liittyy aina
 Tile, koska Tilen, joka kuvaa maaston palaa, tyyppi vaikuttaa Unit:in Defenceen ja kertoo missä Unit on. 
+
+Game:iin liittyy lista rakennuksista joita kartalla on eli BuildingList. BuildingList sisältää rakennuksia. Outpost tyyppisistä
+rakennuksisata voi rakentaa yksiköitä. Hieman epä intuitiivisesti rakennuksen tyyppi määrätyy sen Tile:n mukaan jolla se on.
+Tämän ja rakennuksen sijainnin takia rakennukseen liittyy aina Tile. Rakennukseen voi liittyä Player, joka omistaa sen, mutta
+sen Player voi olla myös null, jolloin rakennus on neutraali. 
