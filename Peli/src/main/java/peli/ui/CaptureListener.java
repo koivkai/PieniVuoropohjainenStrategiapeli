@@ -24,7 +24,6 @@ public class CaptureListener implements ActionListener {
 
         if (this.duel.getSelectedUnit() != null) {
             Unit unit = this.duel.getSelectedUnit();
-            Tile tile = unit.getTile();
 
             for (Building building : this.duel.getBuildings().getBuildings()) {
                 if (building.getTile() == unit.getTile()) {

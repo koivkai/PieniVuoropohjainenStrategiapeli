@@ -1,4 +1,3 @@
-
 package peli.logic;
 
 import org.junit.After;
@@ -8,28 +7,25 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+public class BuildableTest { // buildable luokkaa ei tällä hetkellä käytetä, joten sitä ei ole mielekästä testata.
 
-public class BuildableTest {
-    
     public BuildableTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
 
-   
-    
 }

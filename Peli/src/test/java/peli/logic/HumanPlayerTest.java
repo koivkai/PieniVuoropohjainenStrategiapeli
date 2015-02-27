@@ -12,38 +12,28 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Vesa
- */
-public class HumanPlayerTest {
-    
+public class HumanPlayerTest { // ei tällä oikein ole mitään testaamisen arvoista.
+
+    private HumanPlayer p1;
+
     public HumanPlayerTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
+        p1 = new HumanPlayer();
     }
-    
+
     @After
     public void tearDown() {
     }
 
-  
-    @Test
-    public void testPelaaVuoro() {
-        
-    }
-
-   
-    
-    
 }

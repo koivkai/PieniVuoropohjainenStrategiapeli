@@ -5,8 +5,8 @@ import java.util.*;
 public abstract class Player {
 
     private Army army;
-    private int gold;
-    private int supply;
+    private int gold; //ei käytössä
+    private int supply; // ei käytössä
 
     public Player() {
         this.gold = 0;

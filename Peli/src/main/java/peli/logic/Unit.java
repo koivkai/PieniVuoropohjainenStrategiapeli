@@ -2,7 +2,7 @@ package peli.logic;
 
 public class Unit {
 
-    private int MP;
+    private int MP; //MovementPoints
     private double Defence;
     private double Attack;
     private double HP;
@@ -45,22 +45,6 @@ public class Unit {
             unit.HP = unit.HP - damage;
         }
 
-    }
-
-    public void Move() {
-
-    }
-
-    /**
-     * Vallottaa annetun rakennuksen yksikkön omistamalle pelaajalle.
-     *
-     *
-     * @param building vallattava rakennus
-     *
-     * @return todennäköisyys kalibroituna
-     */
-    public void Capture(Building building) {
-        building.setPlayer(this.player);
     }
 
     public double getDefence() {
@@ -110,4 +94,10 @@ public class Unit {
     public boolean getHasAttacked() {
         return this.hasAttacked;
     }
+
+    public double getAttack() {
+        return Attack;
+    }
+    
+    
 }

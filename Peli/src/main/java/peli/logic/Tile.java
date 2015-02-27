@@ -4,7 +4,7 @@ public class Tile {
 
     private int x;
     private int y;
-    private int movement;
+    private int movement; // näitä ei tällähetkellä käytetä mihinkään.
     private double defence;
     private TileType type;
     private Building building;
@@ -24,8 +24,8 @@ public class Tile {
         this.y = y;
         if (t.equals(TileType.PLAINS)) {
             this.movement = 1;
-            this.defence = 0;
-        } else if (t.equals(TileType.HILLS)) {
+            this.defence = 0.1;
+        } else if (t.equals(TileType.HILLS)) { // näitä ei ole pelissä käytössä vielä yhtään.
             this.movement = 1;
             this.defence = 0.1;
 
@@ -36,6 +36,10 @@ public class Tile {
         } else if (t.equals(TileType.MOUNTAINS)) {
             this.movement = 3;
             this.defence = 0.3;
+
+        }else if (t.equals(TileType.ROADDOWNTOLEFT) || t.equals(TileType.ROADDOWNTORIGHT) || t.equals(TileType.ROADHORIZONTAL) || t.equals(TileType.ROADUPLEFTDOWN) || t.equals(TileType.ROADUPRIGHTDOWN) || t.equals(TileType.ROADUPTOLEFT) || t.equals(TileType.ROADUPTORIGHT) || t.equals(TileType.ROADVERTICAL)) {
+            this.movement = 4;
+            this.defence = 0;
 
         }  else {
             this.movement = 1;
