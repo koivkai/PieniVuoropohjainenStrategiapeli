@@ -1,0 +1,34 @@
+Käyttöohjeet
+
+Pelin kulku
+
+Peliä pelataan hotseattinä kahden ihmisen välillä. Toinen pelaa sinisiä ja toinen punaisia.  Peliä pelataan kartalla joka koostuu
+tiilistä. Tiilillä voi olla rakennuksia. Monemilla pelaajilla on yksiköitä, jotka voivat liikkua, hyökätä ja vallata rakennuksia.
+Yksikkö voi liikkua ja hyökätä vain kerran vuorossa. Sininen aloittaa.  
+
+Pelin voittaminen
+
+Pelin voittaa valloittamalla vastustajan Päämäja rakennuksen (näyttää linnalta, jossa on pelaajan värin mukaisia bannereja.
+
+Yksikön liikuttaminen
+
+Klikkaa ensin omistamaasi yksikköä ja sitten ruuta jonne haluat sen menenvän.  Yksiköt liikkuvat saavat liikkua vain kerran 
+vuorossa ja maksimissaan kolmen ruudun päähän.  Yksikkö ei voi liikkua tiilenkulmasta kulmaan. Yksiköt voivat liikkua toistensa
+läpi mutta eivät toistensa päälle.
+
+Rakennuksen valtaus
+
+Klikkaa yksikköä, joka on rakennuksen päällä.  Klikkaa sitten Capture-nappia. Huomaat että rakennuksen väri muuttuu. 
+Uuden yksikön rakentaminen
+
+Klikkaa omistamaasi rakennus (väri kertoo omistajan) klikkaa sitten Build-nappia. Yksikkö ilmestyy rakennuksen päälle. Rakennus
+voi rakentaa vain yhden yksikön vuorossa. Yksikkö saa liikkua ja hyökätä vuorolla jona se on tehty.
+
+Hyökkääminen
+
+Klikkaa yksikköä, jolla haluat hyökätä. Klikkaa Attack-nappia. Yksikkö hyökkää kaikkiin viereisiin vihollis yksiköihin 
+(kulmittain ei ole vierekkäin). Yksikkö voi hyökätä vain kerran vuorossa.
+
+Vuoron lopettamien
+
+Kun olet valmis vuorosi kanssa ja haluat antaa vastujasi pelata klikkaa End Turn – nappia.
