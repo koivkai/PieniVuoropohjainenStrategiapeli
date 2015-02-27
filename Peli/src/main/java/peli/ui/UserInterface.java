@@ -40,31 +40,41 @@ public class UserInterface implements Runnable {
     }
 
     private void createComponents(Container container) {
+        
         container.setLayout(null);
+        
         JButton endTurnButton = new JButton("End Turn");
         JButton captureButton = new JButton("Capture");
         JButton buildButton = new JButton("Build Unit");
         JButton attackButton = new JButton("Attack");
+        
         EndOfTurnListener endOfTurnListener = new EndOfTurnListener(this.duel);
         CaptureListener captureLister = new CaptureListener(this.duel, container);
         BuildUnitListener buildUnitListener = new BuildUnitListener(this.duel, container);
         AttackListener attackLister = new AttackListener(this.duel, container);
+        
         endTurnButton.addActionListener(endOfTurnListener);
         captureButton.addActionListener(captureLister);
         buildButton.addActionListener(buildUnitListener);
         attackButton.addActionListener(attackLister);
-        canvas = new Canvas(this.duel, endTurnButton, captureButton, buildButton, attackButton);
-        canvas.setBounds(0, 0, 1200, 840);
-        container.add(canvas);
-
+        
         endTurnButton.setBounds(1050, 650, 100, 50);
         captureButton.setBounds(1050, 330, 100, 50);
         buildButton.setBounds(50, 330, 100, 50);
         attackButton.setBounds(50, 500, 100, 50);
+        
         container.add(endTurnButton);
         container.add(captureButton);
         container.add(buildButton);
         container.add(attackButton);
+        
+        
+        canvas = new Canvas(this.duel, endTurnButton, captureButton, buildButton, attackButton);
+        canvas.setBounds(0, 0, 1200, 840);
+        container.add(canvas);
+
+        
+        
         frame.addMouseListener(new ClickDetector(this.duel, container));
 
     }

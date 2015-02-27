@@ -36,7 +36,8 @@ public class ArmyTest {
     public void testAddUnit() {
         Army testArmy2 = new Army();
         Tile tile = new Tile(1, 1, TileType.PLAINS);
-        Unit unit = new Unit(1, 1, 2, 12, tile, "name");
+        Player p1 = new HumanPlayer();
+        Unit unit = new Unit(1, 1, 2, 12, tile, "name", p1);
         testArmy2.addUnit(unit);
         assertEquals(testArmy2.getUnits().size(), 1);
     }
@@ -45,8 +46,9 @@ public class ArmyTest {
     @Test
     public void testRemoveUnit() {
         Army testArmy2 = new Army();
+        Player p1 = new HumanPlayer();
         Tile tile = new Tile(1, 1, TileType.PLAINS);
-        Unit unit = new Unit(1, 1, 2, 12, tile, "name");
+        Unit unit = new Unit(1, 1, 2, 12, tile, "name",p1);
         testArmy2.addUnit(unit);
         testArmy2.removeUnit(unit);
         assertEquals(testArmy2.getUnits().size(), 0);

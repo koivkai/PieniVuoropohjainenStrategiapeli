@@ -49,9 +49,11 @@ public class UnitTest {
     
     @Test
     public void testAttack() {
+        Player p1 = new HumanPlayer();
+        Player p2 = new HumanPlayer();
         Tile tile = new Tile(0, 0, TileType.PLAINS);
-        Unit unit = new Unit(1, 0.1, 5, 20, tile, "name");
-        Unit unit2 = new Unit(1, 0.1, 5, 20, tile, "name");
+        Unit unit = new Unit(1, 0.1, 5, 20, tile, "name",p1);
+        Unit unit2 = new Unit(1, 0.1, 5, 20, tile, "name",p2);
         unit.Attack(unit2);
         assertEquals(15.5, unit2.getHP(), 0.1);
     }
@@ -66,25 +68,7 @@ public class UnitTest {
         
     }
     
-    @Test
-    public void testTakeDamageNOTLethal() {
-        Tile tile = new Tile(0, 0, TileType.PLAINS);
-        Unit unit = new Unit(1, 0.1, 5, 20, tile, "name");
-        unit.TakeDamage(10);
-        assertEquals(10, unit.getHP(), 0.1);
-    }
     
-    @Test
-    public void testTakeDamageLethalANDDie() {
-        Army army = new Army();
-        HumanPlayer player = new HumanPlayer();
-        player.setArmy(army);
-        Tile tile = new Tile(0, 0, TileType.PLAINS);
-        Unit unit = new Unit(1, 0.1, 5, 20, tile, "name");
-        unit.setPlayer(player);
-        army.addUnit(unit);
-        unit.TakeDamage(100);
-        assertEquals(0, army.getUnits().size());
-    }
+    
     
 }

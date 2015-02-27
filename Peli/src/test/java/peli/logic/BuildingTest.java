@@ -18,6 +18,10 @@ import static org.junit.Assert.*;
  */
 public class BuildingTest {
     
+    private Building building;
+    private Player p1;
+    private Tile tile;
+    
     public BuildingTest() {
     }
     
@@ -31,12 +35,21 @@ public class BuildingTest {
     
     @Before
     public void setUp() {
+        p1 = new HumanPlayer();
+        tile = new Tile(0, 0, TileType.PLAINS);
+        this.building = new Building ("Test" , p1 , tile);
     }
     
     @After
     public void tearDown() {
     }
 
-   
+   @Test
+   public void ConstuctorWorks() { // testaa vain niitä arvoja joita tosiasiassa käytetään
+       assertEquals(this.building.getNimi(), "Test");
+       assertEquals(this.building.getHasBuild(), false);
+       assertEquals(this.building.getPlayer(), p1);
+       assertEquals(this.tile, this.building.getTile());
+   }
     
 }
