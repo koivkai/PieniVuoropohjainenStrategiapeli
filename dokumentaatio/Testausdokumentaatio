@@ -1,0 +1,15 @@
+Testaus dokumentaatio
+
+Käyttöliittymä on testattu kokonaan käsin. Käyttöliittymän testauksen helpottamiseksi joihinkin sen toimintoihin on lisätty
+komentorivi tulosteita.  Vaikeinta oli saada klikkaaminen toimimaan oikein. Testaaminen tapahtui koodia kirjoitettaessa siten
+että, tein jotain uutta ja testasin toimiko se ja jos toimi oliko mikään vanha juttu mennyt rikki. Koska käyttö liittymä näyttää
+täsmälleen mitä kartalla on, myös kartta on osin testattu käsin katsomalla piirtyvät halutut tiilen haluttuun kohtaan. 
+
+Havaitut bugit:
+
+Demo tilaisuudessa ilmeni että mouse clicked ei toimi linuxilla oikein. Kaikki mouse clicked toiminnut on muutettu
+mouse pressed muotoon, mikä toivattavasti korjasi ongelman.
+
+Macillä napit eivät piirry, paitsi jos käy vaihtamassa Userinterface luokssa createComponents metodissa setLayoutiiin uuden
+BoxLayoutin (new BoxLayout(component, 1)). Tällöin tosin napit piirttyvät luonnollisesti väärään kohtaan ja pelilaudan 2 
+alinta riviä ei näy, mutta peli on sinällään pelattavissa. 
