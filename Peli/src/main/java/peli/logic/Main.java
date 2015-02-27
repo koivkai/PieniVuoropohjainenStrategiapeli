@@ -17,8 +17,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GameMaker game = new GameMaker();
-        game.play();
+        GameMaker gameMaker = new GameMaker();
+        gameMaker.MakeANewGame();
 
     }
 

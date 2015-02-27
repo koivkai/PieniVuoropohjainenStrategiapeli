@@ -12,7 +12,7 @@ public class Game {
     private Player playerWhoseTurnItIs;
     private Player winner;
 
-    // tÃƒÂ¤mÃƒÂ¤ on alkuun ainoa kartta
+    
     public Game(Player player1, Player playder2) {
         this.map = new Map(20, 20);
         this.player1 = player1;

@@ -8,7 +8,7 @@ public class GameMaker {
     public GameMaker() {
     }
 
-    public void play() {
+    public void MakeANewGame() {
         Player p1 = new HumanPlayer();
         Player p2 = new HumanPlayer();
 

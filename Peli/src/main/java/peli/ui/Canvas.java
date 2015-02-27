@@ -328,6 +328,7 @@ public class Canvas extends JPanel {
             }
 
         }
+        
         this.endTurnButton.repaint();
         this.captureButton.repaint();
         this.buildButton.repaint();
