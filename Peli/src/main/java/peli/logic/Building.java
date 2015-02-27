@@ -16,6 +16,15 @@ public class Building {
     private Tile tile;
     private boolean hasBuild;
 
+    /**
+     * Building konstructori. Huomaa automaattinen uusi arrayList ja hasBuild
+     * muuttujan default arvo (false)
+     *
+     *
+     * @param nimi
+     * @param player
+     * @param tile
+     */
     public Building(String nimi, Player player, Tile tile) {
         this.nimi = nimi;
         this.player = player;

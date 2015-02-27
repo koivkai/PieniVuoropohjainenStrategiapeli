@@ -20,9 +20,9 @@ public class Tile {
      * Metodi luo uuden tiilen. Tiilen defence ja movement(eikäytössä) riippuva
      * tiilentyypistä.
      *
-     * @param x
-     * @param y
-     * @param t
+     * @param x sijainti x akselilla
+     * @param y sijainti y akselilla
+     * @param t tiilen tyyppi, vaikuttaa tiilen muihin arvohin.
      */
     public Tile(int x, int y, TileType t) {
         this.x = x;

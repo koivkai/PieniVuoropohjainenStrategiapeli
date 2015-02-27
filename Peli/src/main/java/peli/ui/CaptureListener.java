@@ -15,32 +15,41 @@ import peli.logic.Unit;
  */
 public class CaptureListener implements ActionListener {
 
-    private Game duel;
+    private Game game;
     private Component component;
 
-    public CaptureListener(Game duel, Component component) {
-        this.duel = duel;
+    /**
+     * CaptureListener luokan konstruktori.
+     *
+     *
+     * @param game
+     * @param component tarvitaan repaint varten
+     */
+    public CaptureListener(Game game, Component component) {
+        this.game = game;
         this.component = component;
     }
 
     /**
      * Metodi tarkistaa onko valitun yksikön alla rakennusta, jos on rakennus
      * tulee valloitetuksi yksiköä hallitsevalle pelaajalle.
+     *
+     * @param e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (this.duel.getSelectedUnit() != null) {
-            Unit unit = this.duel.getSelectedUnit();
+        if (this.game.getSelectedUnit() != null) {
+            Unit unit = this.game.getSelectedUnit();
 
-            for (Building building : this.duel.getBuildings().getBuildings()) {
+            for (Building building : this.game.getBuildings().getBuildings()) {
                 if (building.getTile() == unit.getTile()) {
-                    building.setPlayer(this.duel.getPlayerWhoseTurnItIs());
+                    building.setPlayer(this.game.getPlayerWhoseTurnItIs());
                     System.out.println("Capture success!");
-                    if (building.getTile().getType() == TileType.REDHQ && this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
-                        this.duel.setWinner(this.duel.getPlayer1());
-                    } else if (building.getTile().getType() == TileType.BLUEHQ && this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer2()) {
-                        this.duel.setWinner(this.duel.getPlayer2());
+                    if (building.getTile().getType() == TileType.REDHQ && this.game.getPlayerWhoseTurnItIs() == this.game.getPlayer1()) {
+                        this.game.setWinner(this.game.getPlayer1());
+                    } else if (building.getTile().getType() == TileType.BLUEHQ && this.game.getPlayerWhoseTurnItIs() == this.game.getPlayer2()) {
+                        this.game.setWinner(this.game.getPlayer2());
                     }
                 }
             }

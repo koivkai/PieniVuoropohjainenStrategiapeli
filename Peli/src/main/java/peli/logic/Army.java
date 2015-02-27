@@ -9,6 +9,11 @@ public class Army {
 
     private ArrayList<Unit> units;
 
+    /**
+     * Army konstructori
+     *
+     *
+     */
     public Army() {
         this.units = new ArrayList<>();
     }

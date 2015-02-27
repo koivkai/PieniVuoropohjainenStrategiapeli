@@ -17,11 +17,18 @@ import peli.logic.Unit;
 public class BuildUnitListener implements ActionListener {
 
     private Container container;
-    private Game duel;
+    private Game game;
 
-    public BuildUnitListener(Game duel, Container container) {
+    /**
+     * BuildUnitListener konstruktori
+     *
+     *
+     * @param game peli johon kaikki liittyy
+     * @param container tarvitaan repaint varten
+     */
+    public BuildUnitListener(Game game, Container container) {
         this.container = container;
-        this.duel = duel;
+        this.game = game;
     }
 
     /**
@@ -31,22 +38,23 @@ public class BuildUnitListener implements ActionListener {
      * on.
      *
      *
+     * @param e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
 
         Player player = null;
 
-        if (this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
-            player = this.duel.getPlayer1();
+        if (this.game.getPlayerWhoseTurnItIs() == this.game.getPlayer1()) {
+            player = this.game.getPlayer1();
         } else {
-            player = this.duel.getPlayer2();
+            player = this.game.getPlayer2();
         }
 
-        if ((this.duel.getSelectedBuilding() != null && (this.duel.getSelectedBuilding().getTile().getType() == TileType.OUTPOSTNEUTRAL || this.duel.getSelectedBuilding().getTile().getType() == TileType.REDHQ || this.duel.getSelectedBuilding().getTile().getType() == TileType.BLUEHQ) && this.duel.getSelectedBuilding().getPlayer() == player) && !this.duel.getSelectedBuilding().getHasBuild()) {
-            Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.duel.getSelectedBuilding().getTile(), "Spearman", player);
+        if ((this.game.getSelectedBuilding() != null && (this.game.getSelectedBuilding().getTile().getType() == TileType.OUTPOSTNEUTRAL || this.game.getSelectedBuilding().getTile().getType() == TileType.REDHQ || this.game.getSelectedBuilding().getTile().getType() == TileType.BLUEHQ) && this.game.getSelectedBuilding().getPlayer() == player) && !this.game.getSelectedBuilding().getHasBuild()) {
+            Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.game.getSelectedBuilding().getTile(), "Spearman", player);
             player.addUnit(unit);
-            this.duel.getSelectedBuilding().setHasBuild(true);
+            this.game.getSelectedBuilding().setHasBuild(true);
             System.out.println("Build!");
         }
 

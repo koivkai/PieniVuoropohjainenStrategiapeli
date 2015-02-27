@@ -11,6 +11,11 @@ public class HumanPlayer extends Player {
     private int gold;
     private int supply;
 
+    /**
+     * HumanPlayerin konstrokturi ei eroa ylä luokan(Player) korstruktorista.
+     *
+     *
+     */
     public HumanPlayer() {
         super();
     }

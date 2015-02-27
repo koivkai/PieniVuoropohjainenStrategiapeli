@@ -16,6 +16,18 @@ public class Unit {
     private boolean hasAttacked;
     private String name;
 
+    /**
+     * Unit konstruktori.
+     *
+     *
+     * @param MP movement points
+     * @param Defence isompi parempi, 1 niin ei ota vahinkoa
+     * @param Attack hyökkäus voima
+     * @param HP hit points
+     * @param tile missä unit on
+     * @param name
+     * @param player omistaja
+     */
     public Unit(int MP, double Defence, double Attack, double HP, Tile tile, String name, Player player) {
         this.MP = MP;
         this.Defence = Defence;

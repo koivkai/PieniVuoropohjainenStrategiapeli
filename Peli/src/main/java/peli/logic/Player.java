@@ -12,6 +12,10 @@ public abstract class Player {
     private int gold; //ei käytössä
     private int supply; // ei käytössä
 
+    /**
+     * Player luokan konstruktori. Gold ja supply tulevaisuuden varalle.
+     *
+     */
     public Player() {
         this.gold = 0;
         this.supply = 0;

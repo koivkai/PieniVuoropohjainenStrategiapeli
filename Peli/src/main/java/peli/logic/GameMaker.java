@@ -8,6 +8,9 @@ import peli.ui.UserInterface;
  */
 public class GameMaker {
 
+    /**
+     * GameMaker luokalla on tyhjä konstuktori joka ei tee mitään jännää.
+     */
     public GameMaker() {
     }
 

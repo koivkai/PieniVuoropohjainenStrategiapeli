@@ -16,6 +16,16 @@ public class Game {
     private Player playerWhoseTurnItIs;
     private Player winner;
 
+    /**
+     * Game luokan konstructori. Luo uuden game ilmentymän. Huomaa että monet
+     * muuttujat saavat default arvon. (map ja kaikki selected muuttujat.)
+     * selected muuttuen tarkoitus on kertoa mitä käyttöliittymässä on milläkin
+     * hetkellä valittuna.
+     *
+     *
+     * @param player1
+     * @param playder2
+     */
     public Game(Player player1, Player playder2) {
         this.map = new Map(20, 20);
         this.player1 = player1;

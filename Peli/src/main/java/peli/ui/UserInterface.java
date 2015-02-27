@@ -15,17 +15,23 @@ import javax.swing.WindowConstants;
 import peli.logic.*;
 
 /**
- * Käyttöliittymän äiti luokka joka luo kaikki muut luokat ja koko
+ * Käyttöliittymän äitiluokka joka luo kaikki muut luokat ja koko
  * käyttöliittymän.
  */
 public class UserInterface implements Runnable {
 
     private JFrame frame;
     private Canvas canvas;
-    private Game duel;
+    private Game game;
 
-    public UserInterface(Game duel) {
-        this.duel = duel;
+    /**
+     * Interface konstruktori
+     *
+     *
+     * @param game tarvitaan jotta interface liittyisi otenkin pelin tapahtumiin
+     */
+    public UserInterface(Game game) {
+        this.game = game;
     }
 
     /**
@@ -64,10 +70,10 @@ public class UserInterface implements Runnable {
         JButton buildButton = new JButton("Build Unit");
         JButton attackButton = new JButton("Attack");
 
-        EndOfTurnListener endOfTurnListener = new EndOfTurnListener(this.duel);
-        CaptureListener captureLister = new CaptureListener(this.duel, container);
-        BuildUnitListener buildUnitListener = new BuildUnitListener(this.duel, container);
-        AttackListener attackLister = new AttackListener(this.duel, container);
+        EndOfTurnListener endOfTurnListener = new EndOfTurnListener(this.game);
+        CaptureListener captureLister = new CaptureListener(this.game, container);
+        BuildUnitListener buildUnitListener = new BuildUnitListener(this.game, container);
+        AttackListener attackLister = new AttackListener(this.game, container);
 
         endTurnButton.addActionListener(endOfTurnListener);
         captureButton.addActionListener(captureLister);
@@ -84,11 +90,11 @@ public class UserInterface implements Runnable {
         container.add(buildButton);
         container.add(attackButton);
 
-        canvas = new Canvas(this.duel, endTurnButton, captureButton, buildButton, attackButton);
+        canvas = new Canvas(this.game, endTurnButton, captureButton, buildButton, attackButton);
         canvas.setBounds(0, 0, 1200, 840);
         container.add(canvas);
 
-        frame.addMouseListener(new ClickDetector(this.duel, container));
+        frame.addMouseListener(new ClickDetector(this.game, container));
 
     }
 

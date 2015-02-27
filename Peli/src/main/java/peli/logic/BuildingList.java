@@ -10,6 +10,12 @@ public class BuildingList {
 
     private ArrayList<Building> buildings;
 
+    /**
+     * BuildingList konstructori, luo uuden building listin eli käytännössä
+     * uuden arrayListin.
+     *
+     *
+     */
     public BuildingList() {
         this.buildings = new ArrayList<>();
     }

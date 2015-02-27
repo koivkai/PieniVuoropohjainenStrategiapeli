@@ -15,9 +15,11 @@ public class AttackListener implements ActionListener {
     /**
      * Luokka hoitaa yksiköiden hyökkäämisen toisiaan vastaan. Se on Attack
      * nappi listener.
+     * @param game
+     * @param component
      */
-    public AttackListener(Game duel, Component component) {
-        this.game = duel;
+    public AttackListener(Game game, Component component) {
+        this.game = game;
         this.component = component;
     }
 

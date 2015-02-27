@@ -15,15 +15,25 @@ import peli.logic.*;
  */
 public class Canvas extends JPanel {
 
-    private Game duel;
+    private Game game;
     private JButton endTurnButton;
     private JButton captureButton;
     private JButton buildButton;
     private JButton attackButton;
 
-    public Canvas(Game duel, JButton endTurnButton, JButton captureButton, JButton buildButton, JButton attackButton) {
+    /**
+     * Luo uuden Canvaksen
+     *
+     *
+     * @param game peli joka halutaan maalata
+     * @param endTurnButton nappalut katoilevat jos niitä ei repainttaa täällä
+     * @param captureButton nappalut katoilevat jos niitä ei repainttaa täällä
+     * @param attackButton nappalut katoilevat jos niitä ei repainttaa täällä
+     * @param buildButton nappalut katoilevat jos niitä ei repainttaa täällä
+     */
+    public Canvas(Game game, JButton endTurnButton, JButton captureButton, JButton buildButton, JButton attackButton) {
         super.setBackground(Color.WHITE);
-        this.duel = duel;
+        this.game = game;
         this.endTurnButton = endTurnButton;
         this.captureButton = captureButton;
         this.buildButton = buildButton;
@@ -176,8 +186,8 @@ public class Canvas extends JPanel {
             int x = 200;
 
             for (int i2 = 0; i2 < 20; i2++) {
-                if (t < this.duel.getMap().getTiles().size()) {
-                    Tile tile = this.duel.getMap().getTiles().get(t);
+                if (t < this.game.getMap().getTiles().size()) {
+                    Tile tile = this.game.getMap().getTiles().get(t);
                     BufferedImage imageToDraw = null;
 
                     if (tile.getType() == TileType.PLAINS) {
@@ -288,19 +298,19 @@ public class Canvas extends JPanel {
 
         }
 
-        for (Building building : this.duel.getBuildings().getBuildings()) {
+        for (Building building : this.game.getBuildings().getBuildings()) {
             BufferedImage buildingImage = null;
-            if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+            if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.game.getPlayer1()) {
                 buildingImage = blueFarm;
-            } else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+            } else if (building.getTile().getType() == TileType.FARMNEUTRAL && building.getPlayer() == this.game.getPlayer2()) {
                 buildingImage = redFarm;
-            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.game.getPlayer1()) {
                 buildingImage = blueMine;
-            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+            } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == this.game.getPlayer2()) {
                 buildingImage = redMine;
-            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.duel.getPlayer1()) {
+            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.game.getPlayer1()) {
                 buildingImage = blueOutpost;
-            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.duel.getPlayer2()) {
+            } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == this.game.getPlayer2()) {
                 buildingImage = redOutpost;
             } else if (building.getTile().getType() == TileType.OUTPOSTNEUTRAL && building.getPlayer() == null) {
                 buildingImage = neutralOutpost;
@@ -308,9 +318,9 @@ public class Canvas extends JPanel {
                 buildingImage = neutralFarm;
             } else if (building.getTile().getType() == TileType.MINENEUTRAL && building.getPlayer() == null) {
                 buildingImage = neutralMine;
-            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.duel.getPlayer2()) {
+            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.game.getPlayer2()) {
                 buildingImage = redHQ;
-            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.duel.getPlayer1()) {
+            } else if ((building.getTile().getType() == TileType.REDHQ || building.getTile().getType() == TileType.BLUEHQ) && building.getPlayer() == this.game.getPlayer1()) {
                 buildingImage = blueHQ;
             }
 
@@ -327,10 +337,10 @@ public class Canvas extends JPanel {
      *
      */
     private void PaintWinScreen(Graphics graphics) {
-        if (this.duel.getWinner() != null) {
+        if (this.game.getWinner() != null) {
             BufferedImage winScreen = null;
 
-            if (this.duel.getWinner() == this.duel.getPlayer1()) {
+            if (this.game.getWinner() == this.game.getPlayer1()) {
                 BufferedImage player1WinScreen = null;
                 try {
                     player1WinScreen = ImageIO.read(new File("images/player1WinScreen.png"));
@@ -351,10 +361,11 @@ public class Canvas extends JPanel {
             graphics.drawImage(winScreen, 0, 0, this);
         }
     }
-    
+
     /**
- * Metodi maalaa kaikki pelissä olevat yksiköt. Pelaaja 1 yksiköt maalataan sinisillä ukkeleillla, pelaaja kahden punaisilla.
- */
+     * Metodi maalaa kaikki pelissä olevat yksiköt. Pelaaja 1 yksiköt maalataan
+     * sinisillä ukkeleillla, pelaaja kahden punaisilla.
+     */
     private void PaintUnits(Graphics graphics) {
         BufferedImage UnitBlueSpearman = null;
         try {
@@ -370,7 +381,7 @@ public class Canvas extends JPanel {
 
         }
 
-        for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) {
+        for (Unit unit : this.game.getPlayer1().getArmy().getUnits()) {
             BufferedImage unitImage = null;
 
             if (unit.getName().equals("Spearman")) {
@@ -383,7 +394,7 @@ public class Canvas extends JPanel {
 
         }
 
-        for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) {
+        for (Unit unit : this.game.getPlayer2().getArmy().getUnits()) {
             BufferedImage unitImage = null;
 
             if (unit.getName().equals("Spearman")) {

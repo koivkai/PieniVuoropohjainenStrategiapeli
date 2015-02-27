@@ -14,11 +14,18 @@ import peli.logic.Unit;
  */
 public class ClickDetector implements MouseListener {
 
-    private Game duel;
+    private Game game;
     private Component component;
 
-    public ClickDetector(Game duel, Component component) {
-        this.duel = duel;
+    /**
+     * ClickdDtector konstruktori.
+     *
+     *
+     * @param game 
+     * @param component tarvitaan repaint varten, mutta tarvitaanko repaint.
+     */
+    public ClickDetector(Game game, Component component) {
+        this.game = game;
         this.component = component;
     }
 
@@ -43,46 +50,46 @@ public class ClickDetector implements MouseListener {
 
         Army army = null;
 
-        if (this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
-            army = this.duel.getPlayer1().getArmy();
+        if (this.game.getPlayerWhoseTurnItIs() == this.game.getPlayer1()) {
+            army = this.game.getPlayer1().getArmy();
         } else {
-            army = this.duel.getPlayer2().getArmy();
+            army = this.game.getPlayer2().getArmy();
         }
 
-        if (this.duel.getSelectedUnit() == null) {
+        if (this.game.getSelectedUnit() == null) {
             for (Unit unit : army.getUnits()) {
                 Tile unitsTile = unit.getTile();
                 if (unitsTile.getUiX() <= x && unitsTile.getUiX() + 39 >= x && unitsTile.getUiY() + 25 <= y && unitsTile.getUiY() + 65 >= y) {
 
-                    this.duel.setSelectedUnit(unit);
-                    this.duel.setSelectedTile(null);
-                    this.duel.setSelectedBuilding(null);
+                    this.game.setSelectedUnit(unit);
+                    this.game.setSelectedTile(null);
+                    this.game.setSelectedBuilding(null);
 
                     System.out.println("found unit! UIx = " + unitsTile.getUiX() + "UIy = " + unitsTile.getUiY() + " x = " + unitsTile.getX() + " y = " + unitsTile.getY());
                 }
             }
-        } else if (this.duel.getSelectedUnit() != null) {
-            for (Tile tile : this.duel.getMap().getTiles()) {
+        } else if (this.game.getSelectedUnit() != null) {
+            for (Tile tile : this.game.getMap().getTiles()) {
                 if (tile.getUiX() <= x && tile.getUiX() + 39 >= x && tile.getUiY() + 25 <= y && tile.getUiY() + 65 >= y) {
                     System.out.println("Found Tile! x = " + tile.getUiX() + " y = " + tile.getUiY());
                     boolean tileIsFree = true;
 
-                    for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
+                    for (Unit unit : this.game.getPlayer1().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
                         Tile unitTile = unit.getTile();
                         if (unitTile == tile) {
                             tileIsFree = false;
                         }
                     }
 
-                    for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
+                    for (Unit unit : this.game.getPlayer2().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
                         Tile unitTile = unit.getTile();
                         if (unitTile == tile) {
                             tileIsFree = false;
                         }
                     }
 
-                    int unitX = this.duel.getSelectedUnit().getTile().getX();
-                    int unitY = this.duel.getSelectedUnit().getTile().getY();
+                    int unitX = this.game.getSelectedUnit().getTile().getX();
+                    int unitY = this.game.getSelectedUnit().getTile().getY();
 
                     int tileX = tile.getX();
                     int tileY = tile.getY();
@@ -104,25 +111,25 @@ public class ClickDetector implements MouseListener {
 
                     int totalDif = xDif + yDif;
 
-                    if (tileIsFree && totalDif <= this.duel.getSelectedUnit().getMP() && !this.duel.getSelectedUnit().getHasMoved()) {
-                        this.duel.getSelectedUnit().setTile(tile);
-                        this.duel.getSelectedUnit().setHasMoved(true);
+                    if (tileIsFree && totalDif <= this.game.getSelectedUnit().getMP() && !this.game.getSelectedUnit().getHasMoved()) {
+                        this.game.getSelectedUnit().setTile(tile);
+                        this.game.getSelectedUnit().setHasMoved(true);
                     }
 
-                    this.duel.setSelectedTile(tile); // tarvitaanko tätä mihinkään
-                    this.duel.setSelectedUnit(null);
-                    this.duel.setSelectedTile(null); // herp a derp
-                    this.duel.setSelectedBuilding(null);
+                    this.game.setSelectedTile(tile); // tarvitaanko tätä mihinkään
+                    this.game.setSelectedUnit(null);
+                    this.game.setSelectedTile(null); // herp a derp
+                    this.game.setSelectedBuilding(null);
                 }
             }
         }
 
-        if (this.duel.getSelectedUnit() == null) {
-            for (Building building : this.duel.getBuildings().getBuildings()) {
+        if (this.game.getSelectedUnit() == null) {
+            for (Building building : this.game.getBuildings().getBuildings()) {
                 Tile tile = building.getTile();
                 if (tile.getUiX() <= x && tile.getUiX() + 39 >= x && tile.getUiY() + 25 <= y && tile.getUiY() + 65 >= y) {
                     System.out.println("Found Building!");
-                    this.duel.setSelectedBuilding(building);
+                    this.game.setSelectedBuilding(building);
                 }
             }
         }

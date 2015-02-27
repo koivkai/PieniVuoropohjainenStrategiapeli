@@ -12,10 +12,16 @@ import peli.logic.Unit;
  */
 public class EndOfTurnListener implements ActionListener {
 
-    private Game duel;
+    private Game game;
 
-    public EndOfTurnListener(Game duel) {
-        this.duel = duel;
+    /**
+     * EndOfTurnListener konstruktori.
+     *
+     *
+     * @param game
+     */
+    public EndOfTurnListener(Game game) {
+        this.game = game;
     }
 
     /**
@@ -25,30 +31,30 @@ public class EndOfTurnListener implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        Player p1 = this.duel.getPlayer1();
-        Player p2 = this.duel.getPlayer2();
+        Player p1 = this.game.getPlayer1();
+        Player p2 = this.game.getPlayer2();
 
-        this.duel.setSelectedBuilding(null);
-        this.duel.setSelectedUnit(null);
-        this.duel.setSelectedTile(null);
+        this.game.setSelectedBuilding(null);
+        this.game.setSelectedUnit(null);
+        this.game.setSelectedTile(null);
 
-        if (this.duel.getPlayerWhoseTurnItIs() == p1) {
-            this.duel.setPlayerWhoseTurnItIs(p2);
-        } else if (this.duel.getPlayerWhoseTurnItIs() == p2) {
-            this.duel.setPlayerWhoseTurnItIs(p1);
+        if (this.game.getPlayerWhoseTurnItIs() == p1) {
+            this.game.setPlayerWhoseTurnItIs(p2);
+        } else if (this.game.getPlayerWhoseTurnItIs() == p2) {
+            this.game.setPlayerWhoseTurnItIs(p1);
         }
 
-        for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) {
+        for (Unit unit : this.game.getPlayer1().getArmy().getUnits()) {
             unit.setHasMoved(false);
             unit.setHasAttacked(false);
         }
 
-        for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) {
+        for (Unit unit : this.game.getPlayer2().getArmy().getUnits()) {
             unit.setHasMoved(false);
             unit.setHasAttacked(false);
         }
 
-        for (Building building : this.duel.getBuildings().getBuildings()) {
+        for (Building building : this.game.getBuildings().getBuildings()) {
             building.setHasBuild(false);
         }
 

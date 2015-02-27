@@ -13,6 +13,14 @@ public class Map {
     private int numberOFRows;
     private ArrayList<Tile> Tiles;
 
+    /**
+     * Metodi kertoo mikä on onnistumistodennäköisyys syöteluvulla ottaen
+     * huomioon olion konstruktorissa asetetun kalibrointiarvon
+     *
+     *
+     * @param rowLength montako tiiltä per rivi
+     * @param numberOfRows montako riviä tiiliä
+     */
     public Map(int rowLength, int numberOfRows) {
         this.rowLength = rowLength;
         this.numberOFRows = numberOfRows;
