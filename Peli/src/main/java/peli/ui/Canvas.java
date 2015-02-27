@@ -31,6 +31,19 @@ public class Canvas extends JPanel {
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
 
+        PaintTilesAndBuildings(graphics);
+
+        PaintUnits(graphics);
+
+        this.endTurnButton.repaint();
+        this.captureButton.repaint();
+        this.buildButton.repaint();
+        this.attackButton.repaint();
+
+        PaintWinScreen(graphics);
+    }
+
+    private void PaintTilesAndBuildings(Graphics graphics) {
         BufferedImage plains = null;
         try {
             plains = ImageIO.read(new File("images/PlainsTile.png"));
@@ -288,7 +301,35 @@ public class Canvas extends JPanel {
                 graphics.drawImage(buildingImage, building.getTile().getUiX(), building.getTile().getUiY(), this);
             }
         }
+    }
 
+    private void PaintWinScreen(Graphics graphics) {
+        if (this.duel.getWinner() != null) {
+            BufferedImage winScreen = null;
+
+            if (this.duel.getWinner() == this.duel.getPlayer1()) {
+                BufferedImage player1WinScreen = null;
+                try {
+                    player1WinScreen = ImageIO.read(new File("images/player1WinScreen.png"));
+                } catch (IOException ex) {
+
+                }
+                winScreen = player1WinScreen;
+            } else {
+                BufferedImage player2WinScreen = null;
+                try {
+                    player2WinScreen = ImageIO.read(new File("images/player2WinScreen.png"));
+                } catch (IOException ex) {
+
+                }
+                winScreen = player2WinScreen;
+            }
+
+            graphics.drawImage(winScreen, 0, 0, this);
+        }
+    }
+
+    private void PaintUnits(Graphics graphics) {
         BufferedImage UnitBlueSpearman = null;
         try {
             UnitBlueSpearman = ImageIO.read(new File("images/UnitBlueSpearman.png"));
@@ -327,37 +368,6 @@ public class Canvas extends JPanel {
                 graphics.drawImage(unitImage, unit.getTile().getUiX(), unit.getTile().getUiY(), this);
             }
 
-        }
-        
-        this.endTurnButton.repaint();
-        this.captureButton.repaint();
-        this.buildButton.repaint();
-        this.attackButton.repaint();
-
-        if (this.duel.getWinner() != null) {
-            BufferedImage winScreen = null;
-
-            if (this.duel.getWinner() == this.duel.getPlayer1()) {
-                BufferedImage player1WinScreen = null;
-                try {
-                    player1WinScreen = ImageIO.read(new File("images/player1WinScreen.png"));
-                } catch (IOException ex) {
-
-                }
-                winScreen = player1WinScreen;
-            }
-            
-            else {
-                BufferedImage player2WinScreen = null;
-                try {
-                    player2WinScreen = ImageIO.read(new File("images/player2WinScreen.png"));
-                } catch (IOException ex) {
-
-                }
-                winScreen = player2WinScreen;
-            }
-            
-            graphics.drawImage(winScreen, 0, 0, this);
         }
     }
 
