@@ -1,5 +1,11 @@
 package peli.logic;
 
+/**
+ * Luokka kuvaa tiiliä, joista pelin kartta koostuu. Movement arvo on tehty
+ * laajennusta varten kunnollista reitin hakua ajatellen. X ja y kertovat palan
+ * sijainnin logiikassa, uiX ja uiY kertovat todellisen sijainnin näytöllä. UI
+ * arvot lisättiin hätärakaisuna deadlinien painaessa päälle.
+ */
 public class Tile {
 
     private int x;
@@ -7,18 +13,17 @@ public class Tile {
     private int movement; // näitä ei tällähetkellä käytetä mihinkään.
     private double defence;
     private TileType type;
-    private Building building;
     private int uiX;
     private int uiY;
 
-    public Tile(int x, int y, TileType type, Building building) {
-        this.x = x;
-        this.y = y;
-
-        this.type = type;
-        this.building = building;
-    }
-
+    /**
+     * Metodi luo uuden tiilen. Tiilen defence ja movement(eikäytössä) riippuva
+     * tiilentyypistä.
+     *
+     * @param x
+     * @param y
+     * @param t
+     */
     public Tile(int x, int y, TileType t) {
         this.x = x;
         this.y = y;
@@ -37,11 +42,11 @@ public class Tile {
             this.movement = 3;
             this.defence = 0.3;
 
-        }else if (t.equals(TileType.ROADDOWNTOLEFT) || t.equals(TileType.ROADDOWNTORIGHT) || t.equals(TileType.ROADHORIZONTAL) || t.equals(TileType.ROADUPLEFTDOWN) || t.equals(TileType.ROADUPRIGHTDOWN) || t.equals(TileType.ROADUPTOLEFT) || t.equals(TileType.ROADUPTORIGHT) || t.equals(TileType.ROADVERTICAL)) {
+        } else if (t.equals(TileType.ROADDOWNTOLEFT) || t.equals(TileType.ROADDOWNTORIGHT) || t.equals(TileType.ROADHORIZONTAL) || t.equals(TileType.ROADUPLEFTDOWN) || t.equals(TileType.ROADUPRIGHTDOWN) || t.equals(TileType.ROADUPTOLEFT) || t.equals(TileType.ROADUPTORIGHT) || t.equals(TileType.ROADVERTICAL)) {
             this.movement = 4;
             this.defence = 0;
 
-        }  else {
+        } else {
             this.movement = 1;
             this.defence = 0.3;
         }

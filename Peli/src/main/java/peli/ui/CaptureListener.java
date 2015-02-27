@@ -9,6 +9,10 @@ import peli.logic.Tile;
 import peli.logic.TileType;
 import peli.logic.Unit;
 
+/**
+ * Luokka hoitaa capture napin toiminnallisuuden. Eli mahdollistaa rakennusten
+ * valloittamisen.
+ */
 public class CaptureListener implements ActionListener {
 
     private Game duel;
@@ -19,6 +23,10 @@ public class CaptureListener implements ActionListener {
         this.component = component;
     }
 
+    /**
+     * Metodi tarkistaa onko valitun yksikön alla rakennusta, jos on rakennus
+     * tulee valloitetuksi yksiköä hallitsevalle pelaajalle.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

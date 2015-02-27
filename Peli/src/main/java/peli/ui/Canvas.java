@@ -10,6 +10,9 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import peli.logic.*;
 
+/**
+ * Luokka maalaa kaiken näytölle.
+ */
 public class Canvas extends JPanel {
 
     private Game duel;
@@ -27,6 +30,14 @@ public class Canvas extends JPanel {
         this.attackButton = attackButton;
     }
 
+    /**
+     * Metodi maalaa tiilet, rakennukset ja yksiköt ruudulle. Aina kun nämä
+     * uudelleen maalataa, myös napit maaltataan uudelleen. Nappien uudelleen
+     * maalaus oli hätä ratkaisu nappien katoiluun.
+     *
+     *
+     *
+     */
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
@@ -43,6 +54,12 @@ public class Canvas extends JPanel {
         PaintWinScreen(graphics);
     }
 
+    /**
+     * Metodi lataa ensin kaikkien tiilien ja rakennusten kuvat. Neutraalien
+     * rakennusten grafiikka on rakennusten tiilen kuva. Rakennuksen kuva
+     * valitaan sen omistajan mukaan. pelaaja 1 kuvissa on sininen lippu,
+     * pelaaja 2:della punainen
+     */
     private void PaintTilesAndBuildings(Graphics graphics) {
         BufferedImage plains = null;
         try {
@@ -303,6 +320,12 @@ public class Canvas extends JPanel {
         }
     }
 
+    /**
+     * Metodi pirtää voitto ruudun kaiken päälle, mikäli jompi kumpi pelaaja on
+     * voittanut. Pelaajille on omat voittoruutunsa.
+     *
+     *
+     */
     private void PaintWinScreen(Graphics graphics) {
         if (this.duel.getWinner() != null) {
             BufferedImage winScreen = null;
@@ -328,7 +351,10 @@ public class Canvas extends JPanel {
             graphics.drawImage(winScreen, 0, 0, this);
         }
     }
-
+    
+    /**
+ * Metodi maalaa kaikki pelissä olevat yksiköt. Pelaaja 1 yksiköt maalataan sinisillä ukkeleillla, pelaaja kahden punaisilla.
+ */
     private void PaintUnits(Graphics graphics) {
         BufferedImage UnitBlueSpearman = null;
         try {

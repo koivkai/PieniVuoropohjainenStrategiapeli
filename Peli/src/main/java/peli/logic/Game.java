@@ -1,5 +1,9 @@
 package peli.logic;
 
+/**
+ * Pelin tärkein luokka. Sisältää suoraan tai välillisesti kaiken mitä pelissä
+ * milläkin hetkellä on.
+ */
 public class Game {
 
     private Map map;
@@ -12,7 +16,6 @@ public class Game {
     private Player playerWhoseTurnItIs;
     private Player winner;
 
-    
     public Game(Player player1, Player playder2) {
         this.map = new Map(20, 20);
         this.player1 = player1;
@@ -25,6 +28,18 @@ public class Game {
 
     }
 
+    /**
+     * Metodi rakentaa kartan merkkijonon pohjalta. Myöhemmin voisi olla kätevää
+     * jos merkkijono olisi omassa tiedostossaa. Tällöin voisi olla monta eri
+     * karttaa joista voitaisiin valita haluttu. Tällä hetkellä metodi toimii
+     * vain 20x20 kokoiselle kartalle, koska pelissä on vain 1 kartta. Tämän voi
+     * helposti muuttaa vaihtamalla x ja y tilalle kartan rowLenght ja
+     * numberOfRows tiedot.
+     *
+     *
+     *
+     *
+     */
     public void buildMap() {
 
         String mapAsString = "ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222224pfppppppp1ppppppppp1pffffpmpf1ppfffffpp322225pmpf1apfqmqf627pppf1pmpf1ppfffff1pppppf1pmpp1ppppppq1pfffff1pmmp1fffffp1qpppppp1ppmp1fppppp1fffffpp1fpmp1fppp627fqmqfpa1fpmp822224ppfffffpp1fpmpffffp1ppppppppp1pppppppfp32222222224pppapappz1zppfmfppp1appppppppbpppfmfpqmzmppqmqppafappfmfppppqpfffffpqmqppfmfpppppp";
@@ -94,6 +109,14 @@ public class Game {
         }
     }
 
+    /**
+     * Metodi luo ja asettaa rakennukset kartalle. Metodi luo jokaisin
+     * rakennuksen erikseen ja laittaa sen ennalta määriteltyyn paikkaan. Homma
+     * kattaisi varmaan tehdä automatisoidusti mutta, aikarajoitusten puitteissa
+     * yksin kertaisin ratkaisu oli helpoin.
+     *
+     *
+     */
     public void placeBuildings() {
 
         Building building1 = new Building("Mine", player2, map.getTiles().get(11));
@@ -211,6 +234,11 @@ public class Game {
         this.buildings.addBuilding(building38);
     }
 
+    /**
+     * Medoti luo molemmille pelaajille pari aloitus yksikköä.
+     *
+     *
+     */
     public void placeStartingUnits() {
         Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(306), "Spearman", this.player1);
         Unit unit2 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(308), "Spearman", this.player1);
@@ -223,6 +251,13 @@ public class Game {
         this.player2.addUnit(unit4);
     }
 
+    /**
+     * Metodi luo kartan, luo ja asettaa rakennuset ja luo ja asettaa aloitus
+     * yksiköt. Huomaa että kartta on tehtävä ennenkuin yksiköitä tai
+     * rakennuksia voidaan alkaa asettaa.
+     *
+     *
+     */
     public void setUpScenario() {
         buildMap();
         placeBuildings();

@@ -1,8 +1,8 @@
 package peli.logic;
 
 /**
- *
- * @author Kaius
+ * Luokka ei ole käytössä. Sitä olisi tarkoitus käyttää sitten kun rakennuksista
+ * voi rakentaa monenlaisia yksiköitä, ja peliin on lisätty resurssit
  */
 public class Buildable { // tämä luokka ei ole käytössä.
 

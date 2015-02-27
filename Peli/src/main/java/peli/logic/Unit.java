@@ -1,5 +1,9 @@
 package peli.logic;
 
+/**
+ * Luokka kuvaa pelin yksiköitä, joita käytetään vastustajan yksiköiden
+ * tuhoamiseen ja rakennusten valtaukseen.
+ */
 public class Unit {
 
     private int MP; //MovementPoints
@@ -33,7 +37,7 @@ public class Unit {
      *
      *
      */
-    public void Attack(Unit unit) {
+    public void attack(Unit unit) {
 
         double damage = (1 - (unit.getDefence() + unit.getTile().getDefence())) * this.Attack;
 
@@ -98,6 +102,5 @@ public class Unit {
     public double getAttack() {
         return Attack;
     }
-    
-    
+
 }

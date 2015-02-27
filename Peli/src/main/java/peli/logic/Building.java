@@ -2,6 +2,10 @@ package peli.logic;
 
 import java.util.*;
 
+/**
+ * Luokka kuvaa rakennus. Gold ja supply oli tarkoitettu resursseiksi, mutta
+ * niitä ei aika rajoitusten takia ole pelissä mukana.
+ */
 public class Building {
 
     private String nimi;

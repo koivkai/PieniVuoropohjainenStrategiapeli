@@ -2,6 +2,9 @@ package peli.logic;
 
 import java.util.*;
 
+/**
+ * Luokkan tarkoitus on sisältää listaa yhden pelaajan omistamista yksiköistä
+ */
 public class Army {
 
     private ArrayList<Unit> units;

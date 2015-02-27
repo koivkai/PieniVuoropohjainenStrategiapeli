@@ -2,6 +2,11 @@ package peli.logic;
 
 import java.util.*;
 
+/**
+ * Luokka kuvaa pelin karttaa. Kartta koostuu tiilistä. rowLengtht kertoo kuinka
+ * monta tiiltä kuhunkin riviin kuluu ja number of row kuinka monta niitä rivejä
+ * on. Ainoalla pelissä olevalla kartalla molemmat arvot ovat 20.
+ */
 public class Map {
 
     private int rowLength;

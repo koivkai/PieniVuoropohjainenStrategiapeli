@@ -8,6 +8,12 @@ import peli.logic.Player;
 import peli.logic.TileType;
 import peli.logic.Unit;
 
+/**
+ * Luokka rakentaa yksikön valittuun rakennukseen. Alunperin tarkoitus oli että
+ * yksiköitä olisi monia, ja niistä voisi valita. Yksiköillä oli myös tarkoitus
+ * olla resurssi hinta. Aikarajoitusten takia koko juttua täytyi
+ * yksinkertaistaa.
+ */
 public class BuildUnitListener implements ActionListener {
 
     private Container container;
@@ -18,6 +24,14 @@ public class BuildUnitListener implements ActionListener {
         this.duel = duel;
     }
 
+    /**
+     * Metodi rakentaa yksikön valitusta rakennuksesta. Vain 1 yksikkö voidaan
+     * rakentaa per rakennus per vuoro. Vain Outposteista ja HQ:sta saa voi
+     * rakentaa yksikköjä. Rakennetun yksikön omistaja on pelaaja jonka vuoro
+     * on.
+     *
+     *
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 

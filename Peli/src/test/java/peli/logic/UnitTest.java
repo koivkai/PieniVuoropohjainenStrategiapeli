@@ -46,7 +46,7 @@ public class UnitTest {
         Tile tile = new Tile(0, 0, TileType.PLAINS);
         Unit unit = new Unit(1, 0.1, 5, 20, tile, "name", p1);
         Unit unit2 = new Unit(1, 0.1, 5, 20, tile, "name", p2);
-        unit.Attack(unit2);
+        unit.attack(unit2);
         assertEquals(16, unit2.getHP(), 0.1);
     }
 
@@ -59,7 +59,7 @@ public class UnitTest {
         Unit unit2 = new Unit(1, 0.1, 5, 20, tile, "name", p2);
         p2.addUnit(unit2);
         assertEquals(1, p2.getArmy().getUnits().size());
-        unit.Attack(unit2);
+        unit.attack(unit2);
         assertEquals(0, p2.getArmy().getUnits().size());
     }
 

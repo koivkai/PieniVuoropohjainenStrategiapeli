@@ -3,12 +3,21 @@ package peli.logic;
 import javax.swing.SwingUtilities;
 import peli.ui.UserInterface;
 
+/**
+ * Luokka alustaa pelin
+ */
 public class GameMaker {
 
     public GameMaker() {
     }
 
-    public void MakeANewGame() {
+    /**
+     * Metodi luo pelaajat ja pelin ja laittaa pelaajat peliin, sekä käynnistää
+     * käyttöliittymän.
+     *
+     *
+     */
+    public void makeANewGame() {
         Player p1 = new HumanPlayer();
         Player p2 = new HumanPlayer();
 
