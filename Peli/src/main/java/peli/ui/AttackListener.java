@@ -35,7 +35,8 @@ public class AttackListener implements ActionListener {
                 int enemyX = enemy.getTile().getX();
                 int enemyY = enemy.getTile().getY();
                 
-                if ((x == enemyX && (y + 1 == enemyY || y - 1 == enemyY)) || (y == enemyY && (x + 1 == enemyX || x - 1 == enemyX))) {
+                if (((x == enemyX && (y + 1 == enemyY || y - 1 == enemyY)) || (y == enemyY && (x + 1 == enemyX || x - 1 == enemyX))) && !attacker.getHasAttacked()) {
+                    attacker.setHasAttacked(true);
                     attacker.Attack(enemy);
                     System.out.println("Attack!");
                 }

@@ -2,44 +2,49 @@ package peli.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import peli.logic.Building;
 import peli.logic.Duel;
 import peli.logic.Player;
 import peli.logic.Unit;
 
 public class EndOfTurnListener implements ActionListener {
-
+    
     private Duel duel;
-
+    
     public EndOfTurnListener(Duel duel) {
         this.duel = duel;
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         Player p1 = this.duel.getPlayer1();
         Player p2 = this.duel.getPlayer2();
-
+        
         this.duel.setSelectedBuilding(null);
         this.duel.setSelectedUnit(null);
         this.duel.setSelectedTile(null);
-
+        
         if (this.duel.getPlayerWhoseTurnItIs() == p1) {
             this.duel.setPlayerWhoseTurnItIs(p2);
         } else if (this.duel.getPlayerWhoseTurnItIs() == p2) {
             this.duel.setPlayerWhoseTurnItIs(p1);
         }
         
-        for (Unit unit:this.duel.getPlayer1().getArmy().getUnits())  {
+        for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) {
             unit.setHasMoved(false);
             unit.setHasAttacked(false);
         }
         
-        for (Unit unit:this.duel.getPlayer2().getArmy().getUnits())  {
+        for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) {
             unit.setHasMoved(false);
             unit.setHasAttacked(false);
+        }
+        
+        for (Building building : this.duel.getBuildings().getBuildings()) {
+            building.setHasBuild(false);
         }
         
         System.out.println("End OF Turn!");
     }
-
+    
 }

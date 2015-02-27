@@ -20,7 +20,6 @@ public class BuildUnitListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Build!");
 
         Player player = null;
 
@@ -30,9 +29,11 @@ public class BuildUnitListener implements ActionListener {
             player = this.duel.getPlayer2();
         }
 
-        if (this.duel.getSelectedBuilding() != null && (this.duel.getSelectedBuilding().getTile().getType() == TileType.OUTPOSTNEUTRAL || this.duel.getSelectedBuilding().getTile().getType() == TileType.REDHQ || this.duel.getSelectedBuilding().getTile().getType() == TileType.BLUEHQ) && this.duel.getSelectedBuilding().getPlayer() == player) {
-            Unit unit = new Unit(3, 0.2, 5.0, 20.0, this.duel.getSelectedBuilding().getTile(), "Spearman", player);
+        if ((this.duel.getSelectedBuilding() != null && (this.duel.getSelectedBuilding().getTile().getType() == TileType.OUTPOSTNEUTRAL || this.duel.getSelectedBuilding().getTile().getType() == TileType.REDHQ || this.duel.getSelectedBuilding().getTile().getType() == TileType.BLUEHQ) && this.duel.getSelectedBuilding().getPlayer() == player) && !this.duel.getSelectedBuilding().getHasBuild()) {
+            Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.duel.getSelectedBuilding().getTile(), "Spearman", player);
             player.addUnit(unit);
+            this.duel.getSelectedBuilding().setHasBuild(true);
+            System.out.println("Build!");
         }
 
         container.repaint();

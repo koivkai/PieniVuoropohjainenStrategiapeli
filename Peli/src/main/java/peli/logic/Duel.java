@@ -212,12 +212,21 @@ public class Duel {
     }
 
     public void placeStartingUnits() {
+        Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(306), "Spearman", this.player1);
+        Unit unit2 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(308), "Spearman", this.player1);
+        Unit unit3 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(91), "Spearman", this.player2);
+        Unit unit4 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(93), "Spearman", this.player2);
 
+        this.player1.addUnit(unit);
+        this.player1.addUnit(unit2);
+        this.player2.addUnit(unit3);
+        this.player2.addUnit(unit4);
     }
 
     public void setUpScenario() {
         buildMap();
         placeBuildings();
+        placeStartingUnits();
     }
 
     public Map getMap() {
@@ -275,7 +284,5 @@ public class Duel {
     public Player getWinner() {
         return winner;
     }
-    
-    
 
 }

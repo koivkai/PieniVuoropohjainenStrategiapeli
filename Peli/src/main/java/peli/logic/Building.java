@@ -10,12 +10,14 @@ public class Building {
     private int goldIncome;
     private int supply;
     private Tile tile;
+    private boolean hasBuild;
 
     public Building(String nimi, Player player, Tile tile) {
         this.nimi = nimi;
         this.player = player;
         this.availableUnits = new ArrayList<Buildable>();
         this.tile = tile;
+        this.hasBuild = false;
     }
 
     public void setPlayer(Player player) {
@@ -40,6 +42,14 @@ public class Building {
 
     public String getNimi() {
         return nimi;
+    }
+
+    public void setHasBuild(boolean hasBuild) {
+        this.hasBuild = hasBuild;
+    }
+
+    public boolean getHasBuild() {
+        return this.hasBuild;
     }
 
 }

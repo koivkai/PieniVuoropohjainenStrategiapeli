@@ -102,12 +102,12 @@ public class Unit {
     public void setHasMoved(boolean hasMoved) {
         this.hasMoved = hasMoved;
     }
-    
-    public boolean getHasMoved () {
+
+    public boolean getHasMoved() {
         return this.hasMoved;
     }
-    
-    public boolean getHasAttacked () {
+
+    public boolean getHasAttacked() {
         return this.hasAttacked;
     }
 }

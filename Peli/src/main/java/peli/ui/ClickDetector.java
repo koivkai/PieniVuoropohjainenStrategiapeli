@@ -10,15 +10,15 @@ import peli.logic.Tile;
 import peli.logic.Unit;
 
 public class ClickDetector implements MouseListener {
-
+    
     private Duel duel;
     private Component component;
-
+    
     public ClickDetector(Duel duel, Component component) {
         this.duel = duel;
         this.component = component;
     }
-
+    
     @Override
     public void mouseClicked(MouseEvent e) {
 //        int x = e.getX();
@@ -94,24 +94,22 @@ public class ClickDetector implements MouseListener {
 //        this.component.repaint();
 
     }
-
+    
     @Override
     public void mousePressed(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
         System.out.println(x);
         System.out.println(y);
-
         
-
         Army army = null;
-
+        
         if (this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
             army = this.duel.getPlayer1().getArmy();
         } else {
             army = this.duel.getPlayer2().getArmy();
         }
-
+        
         if (this.duel.getSelectedUnit() == null) {
             for (Unit unit : army.getUnits()) {
                 Tile unitsTile = unit.getTile();
@@ -120,7 +118,7 @@ public class ClickDetector implements MouseListener {
                     this.duel.setSelectedUnit(unit);
                     this.duel.setSelectedTile(null);
                     this.duel.setSelectedBuilding(null);
-
+                    
                     System.out.println("found unit! UIx = " + unitsTile.getUiX() + "UIy = " + unitsTile.getUiY() + " x = " + unitsTile.getX() + " y = " + unitsTile.getY());
                 }
             }
@@ -129,14 +127,14 @@ public class ClickDetector implements MouseListener {
                 if (tile.getUiX() <= x && tile.getUiX() + 39 >= x && tile.getUiY() + 25 <= y && tile.getUiY() + 65 >= y) {
                     System.out.println("Found Tile! x = " + tile.getUiX() + " y = " + tile.getUiY());
                     boolean tileIsFree = true;
-
+                    
                     for (Unit unit : this.duel.getPlayer1().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
                         Tile unitTile = unit.getTile();
                         if (unitTile == tile) {
                             tileIsFree = false;
                         }
                     }
-
+                    
                     for (Unit unit : this.duel.getPlayer2().getArmy().getUnits()) { // estää siirtymisen olemassa olevien unittien päälle.
                         Tile unitTile = unit.getTile();
                         if (unitTile == tile) {
@@ -156,24 +154,24 @@ public class ClickDetector implements MouseListener {
                     int yDif = 0;
                     
                     if (unitX >= tileX) {
-                        xDif = unitX -tileX;
+                        xDif = unitX - tileX;
                     } else {
-                        xDif = tileX -unitX;
+                        xDif = tileX - unitX;
                     }
                     
                     if (unitY >= tileY) {
-                        yDif = unitY -tileY;
+                        yDif = unitY - tileY;
                     } else {
-                        yDif = tileY -unitY;
+                        yDif = tileY - unitY;
                     }
                     
                     int totalDif = xDif + yDif;
-
+                    
                     if (tileIsFree && totalDif <= this.duel.getSelectedUnit().getMP() && !this.duel.getSelectedUnit().getHasMoved()) {
                         this.duel.getSelectedUnit().setTile(tile);
                         this.duel.getSelectedUnit().setHasMoved(true);
                     }
-
+                    
                     this.duel.setSelectedTile(tile); // tarvitaanko tätä mihinkään
                     this.duel.setSelectedUnit(null);
                     this.duel.setSelectedTile(null); // useless?
@@ -181,7 +179,7 @@ public class ClickDetector implements MouseListener {
                 }
             }
         }
-
+        
         if (this.duel.getSelectedUnit() == null) {
             for (Building building : this.duel.getBuildings().getBuildings()) {
                 Tile tile = building.getTile();
@@ -191,24 +189,24 @@ public class ClickDetector implements MouseListener {
                 }
             }
         }
-
+        
         this.component.repaint();
-
+        
     }
-
+    
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        
     }
-
+    
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        
     }
-
+    
     @Override
     public void mouseExited(MouseEvent e) {
-
+        
     }
-
+    
 }
