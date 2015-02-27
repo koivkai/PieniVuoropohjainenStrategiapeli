@@ -9,7 +9,7 @@ import peli.logic.Unit;
 
 public class AttackListener implements ActionListener {
 
-    private Game duel;
+    private Game game;
     private Component component;
 
     /**
@@ -17,7 +17,7 @@ public class AttackListener implements ActionListener {
      * nappi listener.
      */
     public AttackListener(Game duel, Component component) {
-        this.duel = duel;
+        this.game = duel;
         this.component = component;
     }
 
@@ -31,14 +31,14 @@ public class AttackListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (this.duel.getSelectedUnit() != null && this.duel.getSelectedUnit().getPlayer() == this.duel.getPlayerWhoseTurnItIs()) {
-            Player opponent = this.duel.getPlayer1();
+        if (this.game.getSelectedUnit() != null && this.game.getSelectedUnit().getPlayer() == this.game.getPlayerWhoseTurnItIs()) {
+            Player opponent = this.game.getPlayer1();
 
-            if (this.duel.getPlayerWhoseTurnItIs() == this.duel.getPlayer1()) {
-                opponent = this.duel.getPlayer2();
+            if (this.game.getPlayerWhoseTurnItIs() == this.game.getPlayer1()) {
+                opponent = this.game.getPlayer2();
             }
 
-            Unit attacker = this.duel.getSelectedUnit();
+            Unit attacker = this.game.getSelectedUnit();
             int x = attacker.getTile().getX();
             int y = attacker.getTile().getY();
 
