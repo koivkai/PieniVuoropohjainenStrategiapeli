@@ -3,15 +3,15 @@ package peli.ui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import peli.logic.Building;
-import peli.logic.Duel;
+import peli.logic.Game;
 import peli.logic.Player;
 import peli.logic.Unit;
 
 public class EndOfTurnListener implements ActionListener {
     
-    private Duel duel;
+    private Game duel;
     
-    public EndOfTurnListener(Duel duel) {
+    public EndOfTurnListener(Game duel) {
         this.duel = duel;
     }
     

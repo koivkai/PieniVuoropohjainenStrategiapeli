@@ -3,7 +3,7 @@ package peli.ui;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import peli.logic.Duel;
+import peli.logic.Game;
 import peli.logic.Player;
 import peli.logic.TileType;
 import peli.logic.Unit;
@@ -11,9 +11,9 @@ import peli.logic.Unit;
 public class BuildUnitListener implements ActionListener {
 
     private Container container;
-    private Duel duel;
+    private Game duel;
 
-    public BuildUnitListener(Duel duel, Container container) {
+    public BuildUnitListener(Game duel, Container container) {
         this.container = container;
         this.duel = duel;
     }

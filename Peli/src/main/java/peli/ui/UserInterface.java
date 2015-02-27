@@ -18,9 +18,9 @@ public class UserInterface implements Runnable {
 
     private JFrame frame;
     private Canvas canvas;
-    private Duel duel;
+    private Game duel;
 
-    public UserInterface(Duel duel) {
+    public UserInterface(Game duel) {
         this.duel = duel;
     }
 

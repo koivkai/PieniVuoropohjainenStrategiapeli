@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Vesa
  */
-public class DuelTest {
+public class GameTest {
     
-    public DuelTest() {
+    public GameTest() {
     }
     
     @BeforeClass

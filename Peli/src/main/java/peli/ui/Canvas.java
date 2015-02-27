@@ -12,13 +12,13 @@ import peli.logic.*;
 
 public class Canvas extends JPanel {
 
-    private Duel duel;
+    private Game duel;
     private JButton endTurnButton;
     private JButton captureButton;
     private JButton buildButton;
     private JButton attackButton;
 
-    public Canvas(Duel duel, JButton endTurnButton, JButton captureButton, JButton buildButton, JButton attackButton) {
+    public Canvas(Game duel, JButton endTurnButton, JButton captureButton, JButton buildButton, JButton attackButton) {
         super.setBackground(Color.WHITE);
         this.duel = duel;
         this.endTurnButton = endTurnButton;

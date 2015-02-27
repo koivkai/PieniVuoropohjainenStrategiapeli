@@ -3,16 +3,16 @@ package peli.ui;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import peli.logic.Duel;
+import peli.logic.Game;
 import peli.logic.Player;
 import peli.logic.Unit;
 
 public class AttackListener implements ActionListener {
     
-    private Duel duel;
+    private Game duel;
     private Component component;
     
-    public AttackListener(Duel duel, Component component) {
+    public AttackListener(Game duel, Component component) {
         this.duel = duel;
         this.component = component;
     }

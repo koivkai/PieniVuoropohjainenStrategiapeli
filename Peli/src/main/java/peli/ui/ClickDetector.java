@@ -5,16 +5,16 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import peli.logic.Army;
 import peli.logic.Building;
-import peli.logic.Duel;
+import peli.logic.Game;
 import peli.logic.Tile;
 import peli.logic.Unit;
 
 public class ClickDetector implements MouseListener {
     
-    private Duel duel;
+    private Game duel;
     private Component component;
     
-    public ClickDetector(Duel duel, Component component) {
+    public ClickDetector(Game duel, Component component) {
         this.duel = duel;
         this.component = component;
     }

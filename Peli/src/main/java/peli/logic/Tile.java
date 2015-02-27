@@ -37,13 +37,9 @@ public class Tile {
             this.movement = 3;
             this.defence = 0.3;
 
-        } else if (t.equals(TileType.MINENEUTRAL)) {
-            this.movement = 3;
-            this.defence = 0.3;
-
-        } else {
+        }  else {
             this.movement = 1;
-            this.defence = 0.1;
+            this.defence = 0.3;
         }
         this.type = t;
     }
