@@ -12,3 +12,7 @@ Game:iin liittyy lista rakennuksista joita kartalla on eli BuildingList. Buildin
 rakennuksisata voi rakentaa yksiköitä. Hieman epä intuitiivisesti rakennuksen tyyppi määrätyy sen Tile:n mukaan jolla se on.
 Tämän ja rakennuksen sijainnin takia rakennukseen liittyy aina Tile. Rakennukseen voi liittyä Player, joka omistaa sen, mutta
 sen Player voi olla myös null, jolloin rakennus on neutraali. 
+
+Game:een liittyy myös Map joka on lista tiiliä joista Map koostuu. Tile luokka määrittelee tiilet. Tiilillä on sijainti , tyyppi
+tiilen tyyppi (TileType) on enum joka kertoo millaista maastoa tiili edustaa. Tiilelle määräytyy defence sen mukaan minkä tyyppinen
+se on 
