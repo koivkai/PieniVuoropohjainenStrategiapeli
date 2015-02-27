@@ -1,0 +1,4793 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+</style>
+
+</head>
+<body>
+
+
+<h1>Game.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_1'/>
+1
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_1'></a>
+</td>
+<td class=''><pre><span  class=''>package peli.logic;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_2'/>
+2
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_2'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_3'/>
+3
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_3'></a>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_4'/>
+4
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_4'></a>
+</td>
+<td class=''><pre><span  class=''> * Pelin t&#195;&#164;rkein luokka. Sis&#195;&#164;lt&#195;&#164;&#195;&#164; suoraan tai v&#195;&#164;lillisesti kaiken mit&#195;&#164; peliss&#195;&#164;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_5'/>
+5
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_5'></a>
+</td>
+<td class=''><pre><span  class=''> * mill&#195;&#164;kin hetkell&#195;&#164; on.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_6'/>
+6
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_6'></a>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_7'/>
+7
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_7'></a>
+</td>
+<td class=''><pre><span  class=''>public class Game {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_8'/>
+8
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_8'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_9'/>
+9
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_9'></a>
+</td>
+<td class=''><pre><span  class=''>    private Map map;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_10'/>
+10
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_10'></a>
+</td>
+<td class=''><pre><span  class=''>    private Player player1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_11'/>
+11
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_11'></a>
+</td>
+<td class=''><pre><span  class=''>    private Player player2;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_12'/>
+12
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_12'></a>
+</td>
+<td class=''><pre><span  class=''>    private Unit selectedUnit;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_13'/>
+13
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_13'></a>
+</td>
+<td class=''><pre><span  class=''>    private Tile selectedTile;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_14'/>
+14
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_14'></a>
+</td>
+<td class=''><pre><span  class=''>    private Building selectedBuilding;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_15'/>
+15
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_15'></a>
+</td>
+<td class=''><pre><span  class=''>    private BuildingList buildings;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_16'/>
+16
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_16'></a>
+</td>
+<td class=''><pre><span  class=''>    private Player playerWhoseTurnItIs;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_17'/>
+17
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_17'></a>
+</td>
+<td class=''><pre><span  class=''>    private Player winner;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_18'/>
+18
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_18'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_19'/>
+19
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_19'></a>
+</td>
+<td class='covered'><pre><span  class=''>    public Game(Player player1, Player playder2) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_20'/>
+20
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_20'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.map = new Map(20, 20);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_21'/>
+21
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_21'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.player1 = player1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_22'/>
+22
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_22'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.player2 = playder2;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_23'/>
+23
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_23'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.selectedTile = null;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_24'/>
+24
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_24'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.selectedUnit = null;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_25'/>
+25
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_25'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.buildings = new BuildingList();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_26'/>
+26
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_26'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.playerWhoseTurnItIs = player1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_27'/>
+27
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_27'></a>
+</td>
+<td class='covered'><pre><span  class=''>        this.winner = null;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_28'/>
+28
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_28'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_29'/>
+29
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_29'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_30'/>
+30
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_30'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_31'/>
+31
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_31'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_32'/>
+32
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_32'></a>
+</td>
+<td class=''><pre><span  class=''>     * Metodi rakentaa kartan merkkijonon pohjalta. My&#195;&#182;hemmin voisi olla k&#195;&#164;tev&#195;&#164;&#195;&#164;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_33'/>
+33
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_33'></a>
+</td>
+<td class=''><pre><span  class=''>     * jos merkkijono olisi omassa tiedostossaa. T&#195;&#164;ll&#195;&#182;in voisi olla monta eri</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_34'/>
+34
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_34'></a>
+</td>
+<td class=''><pre><span  class=''>     * karttaa joista voitaisiin valita haluttu. T&#195;&#164;ll&#195;&#164; hetkell&#195;&#164; metodi toimii</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_35'/>
+35
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_35'></a>
+</td>
+<td class=''><pre><span  class=''>     * vain 20x20 kokoiselle kartalle, koska peliss&#195;&#164; on vain 1 kartta. T&#195;&#164;m&#195;&#164;n voi</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_36'/>
+36
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_36'></a>
+</td>
+<td class=''><pre><span  class=''>     * helposti muuttaa vaihtamalla x ja y tilalle kartan rowLenght ja</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_37'/>
+37
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_37'></a>
+</td>
+<td class=''><pre><span  class=''>     * numberOfRows tiedot.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_38'/>
+38
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_38'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_39'/>
+39
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_39'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_40'/>
+40
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_40'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_41'/>
+41
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_41'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_42'/>
+42
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_42'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_43'/>
+43
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_43'></a>
+</td>
+<td class=''><pre><span  class=''>    public void buildMap() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_44'/>
+44
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_44'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_45'/>
+45
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_45'></a>
+</td>
+<td class='covered'><pre><span  class=''>        String mapAsString = &#34;ppppppfmfppqmqpfffffpqppppfmfppafappqmqppmzmqpfmfppprppppppppa1pppfmfppz1zppapappp32222222224pfppppppp1ppppppppp1pffffpmpf1ppfffffpp322225pmpf1apfqmqf627pppf1pmpf1ppfffff1pppppf1pmpp1ppppppq1pfffff1pmmp1fffffp1qpppppp1ppmp1fppppp1fffffpp1fpmp1fppp627fqmqfpa1fpmp822224ppfffffpp1fpmpffffp1ppppppppp1pppppppfp32222222224pppapappz1zppfmfppp1appppppppbpppfmfpqmzmppqmqppafappfmfppppqpfffffpqmqppfmfpppppp&#34;;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_46'/>
+46
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_46'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_47'/>
+47
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_47'></a>
+</td>
+<td class='covered'><pre><span  class=''>        int x = 1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_48'/>
+48
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_48'></a>
+</td>
+<td class='covered'><pre><span  class=''>        int y = 1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_49'/>
+49
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_49'>3</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (int i = 0; i &#60; mapAsString.length(); i++) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_50'/>
+50
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_50'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (x == 21) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_51'/>
+51
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_51'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>                y++;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_52'/>
+52
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_52'></a>
+</td>
+<td class='covered'><pre><span  class=''>                x = 1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_53'/>
+53
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_53'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_54'/>
+54
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_54'></a>
+</td>
+<td class='covered'><pre><span  class=''>            char tileTypeID = mapAsString.charAt(i);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_55'/>
+55
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_55'></a>
+</td>
+<td class='covered'><pre><span  class=''>            TileType typeToBe = null;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_56'/>
+56
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_56'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_57'/>
+57
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_57'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;p&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_58'/>
+58
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_58'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.PLAINS;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_59'/>
+59
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_59'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_60'/>
+60
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_60'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;f&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_61'/>
+61
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_61'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.FOREST;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_62'/>
+62
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_62'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_63'/>
+63
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_63'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;m&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_64'/>
+64
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_64'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.MOUNTAINS;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_65'/>
+65
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_65'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_66'/>
+66
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_66'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;q&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_67'/>
+67
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_67'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.MINENEUTRAL;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_68'/>
+68
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_68'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_69'/>
+69
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_69'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;a&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_70'/>
+70
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_70'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.FARMNEUTRAL;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_71'/>
+71
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_71'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_72'/>
+72
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_72'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;z&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_73'/>
+73
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_73'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.OUTPOSTNEUTRAL;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_74'/>
+74
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_74'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_75'/>
+75
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_75'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;r&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_76'/>
+76
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_76'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.REDHQ;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_77'/>
+77
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_77'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_78'/>
+78
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_78'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;1&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_79'/>
+79
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_79'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADVERTICAL;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_80'/>
+80
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_80'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_81'/>
+81
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_81'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;2&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_82'/>
+82
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_82'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADHORIZONTAL;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_83'/>
+83
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_83'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_84'/>
+84
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_84'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;3&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_85'/>
+85
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_85'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADUPRIGHTDOWN;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_86'/>
+86
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_86'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_87'/>
+87
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_87'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;4&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_88'/>
+88
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_88'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADUPLEFTDOWN;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_89'/>
+89
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_89'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_90'/>
+90
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_90'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;5&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_91'/>
+91
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_91'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADDOWNTOLEFT;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_92'/>
+92
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_92'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_93'/>
+93
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_93'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;6&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_94'/>
+94
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_94'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADDOWNTORIGHT;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_95'/>
+95
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_95'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_96'/>
+96
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_96'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;7&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_97'/>
+97
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_97'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADUPTOLEFT;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_98'/>
+98
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_98'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_99'/>
+99
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_99'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;8&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_100'/>
+100
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_100'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.ROADUPTORIGHT;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_101'/>
+101
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_101'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_102'/>
+102
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_102'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (tileTypeID == &#39;b&#39;) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_103'/>
+103
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_103'></a>
+</td>
+<td class='covered'><pre><span  class=''>                typeToBe = TileType.BLUEHQ;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_104'/>
+104
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_104'></a>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_105'/>
+105
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_105'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_106'/>
+106
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_106'></a>
+</td>
+<td class='covered'><pre><span  class=''>            Tile tile = new Tile(x, y, typeToBe);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_107'/>
+107
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_107'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>            this.map.addTile(tile);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_108'/>
+108
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_108'>1</a>
+</td>
+<td class='covered'><pre><span  class='survived'>            x++;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_109'/>
+109
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_109'></a>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_110'/>
+110
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_110'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_111'/>
+111
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_111'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_112'/>
+112
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_112'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_113'/>
+113
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_113'></a>
+</td>
+<td class=''><pre><span  class=''>     * Metodi luo ja asettaa rakennukset kartalle. Metodi luo jokaisin</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_114'/>
+114
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_114'></a>
+</td>
+<td class=''><pre><span  class=''>     * rakennuksen erikseen ja laittaa sen ennalta m&#195;&#164;&#195;&#164;riteltyyn paikkaan. Homma</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_115'/>
+115
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_115'></a>
+</td>
+<td class=''><pre><span  class=''>     * kattaisi varmaan tehd&#195;&#164; automatisoidusti mutta, aikarajoitusten puitteissa</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_116'/>
+116
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_116'></a>
+</td>
+<td class=''><pre><span  class=''>     * yksin kertaisin ratkaisu oli helpoin.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_117'/>
+117
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_117'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_118'/>
+118
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_118'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_119'/>
+119
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_119'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_120'/>
+120
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_120'></a>
+</td>
+<td class=''><pre><span  class=''>    public void placeBuildings() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_121'/>
+121
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_121'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_122'/>
+122
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_122'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building1 = new Building(&#34;Mine&#34;, player2, map.getTiles().get(11));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_123'/>
+123
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_123'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building1);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_124'/>
+124
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_124'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_125'/>
+125
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_125'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building2 = new Building(&#34;Mine&#34;, player2, map.getTiles().get(13));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_126'/>
+126
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_126'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building2);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_127'/>
+127
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_127'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_128'/>
+128
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_128'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building3 = new Building(&#34;Mine&#34;, null, map.getTiles().get(21));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_129'/>
+129
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_129'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building3);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_130'/>
+130
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_130'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_131'/>
+131
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_131'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building4 = new Building(&#34;Farm&#34;, player2, map.getTiles().get(31));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_132'/>
+132
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_132'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building4);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_133'/>
+133
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_133'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_134'/>
+134
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_134'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building5 = new Building(&#34;Farm&#34;, player2, map.getTiles().get(33));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_135'/>
+135
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_135'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building5);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_136'/>
+136
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_136'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_137'/>
+137
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_137'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building6 = new Building(&#34;Farm&#34;, null, map.getTiles().get(36));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_138'/>
+138
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_138'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building6);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_139'/>
+139
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_139'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_140'/>
+140
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_140'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building7 = new Building(&#34;Farm&#34;, null, map.getTiles().get(38));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_141'/>
+141
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_141'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building7);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_142'/>
+142
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_142'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_143'/>
+143
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_143'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building8 = new Building(&#34;Outpost&#34;, null, map.getTiles().get(42));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_144'/>
+144
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_144'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building8);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_145'/>
+145
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_145'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_146'/>
+146
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_146'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building9 = new Building(&#34;Mine&#34;, null, map.getTiles().get(44));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_147'/>
+147
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_147'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building9);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_148'/>
+148
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_148'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_149'/>
+149
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_149'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building10 = new Building(&#34;HQ&#34;, player2, map.getTiles().get(52));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_150'/>
+150
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_150'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building10);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_151'/>
+151
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_151'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_152'/>
+152
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_152'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building11 = new Building(&#34;Farm&#34;, null, map.getTiles().get(61));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_153'/>
+153
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_153'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building11);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_154'/>
+154
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_154'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_155'/>
+155
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_155'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building12 = new Building(&#34;Outpost&#34;, player2, map.getTiles().get(71));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_156'/>
+156
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_156'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building12);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_157'/>
+157
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_157'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_158'/>
+158
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_158'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building13 = new Building(&#34;Outpost&#34;, player2, map.getTiles().get(73));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_159'/>
+159
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_159'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building13);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_160'/>
+160
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_160'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_161'/>
+161
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_161'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building14 = new Building(&#34;Farm&#34;, null, map.getTiles().get(76));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_162'/>
+162
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_162'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building14);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_163'/>
+163
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_163'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_164'/>
+164
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_164'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building15 = new Building(&#34;Farm&#34;, null, map.getTiles().get(78));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_165'/>
+165
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_165'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building15);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_166'/>
+166
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_166'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_167'/>
+167
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_167'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building16 = new Building(&#34;Farm&#34;, null, map.getTiles().get(143));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_168'/>
+168
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_168'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building16);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_169'/>
+169
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_169'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_170'/>
+170
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_170'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building17 = new Building(&#34;Mine&#34;, player2, map.getTiles().get(189));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_171'/>
+171
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_171'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building17);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_172'/>
+172
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_172'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_173'/>
+173
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_173'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building18 = new Building(&#34;Mine&#34;, player1, map.getTiles().get(210));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_174'/>
+174
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_174'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building18);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_175'/>
+175
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_175'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_176'/>
+176
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_176'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building19 = new Building(&#34;Mine&#34;, null, map.getTiles().get(146));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_177'/>
+177
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_177'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building19);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_178'/>
+178
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_178'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_179'/>
+179
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_179'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building20 = new Building(&#34;Mine&#34;, null, map.getTiles().get(148));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_180'/>
+180
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_180'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building20);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_181'/>
+181
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_181'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_182'/>
+182
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_182'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building21 = new Building(&#34;Mine&#34;, null, map.getTiles().get(251));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_183'/>
+183
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_183'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building21);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_184'/>
+184
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_184'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_185'/>
+185
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_185'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building22 = new Building(&#34;Mine&#34;, null, map.getTiles().get(253));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_186'/>
+186
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_186'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building22);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_187'/>
+187
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_187'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_188'/>
+188
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_188'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building23 = new Building(&#34;Farm&#34;, null, map.getTiles().get(256));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_189'/>
+189
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_189'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building23);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_190'/>
+190
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_190'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_191'/>
+191
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_191'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building24 = new Building(&#34;Farm&#34;, null, map.getTiles().get(321));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_192'/>
+192
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_192'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building24);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_193'/>
+193
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_193'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_194'/>
+194
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_194'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building25 = new Building(&#34;Farm&#34;, null, map.getTiles().get(323));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_195'/>
+195
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_195'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building25);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_196'/>
+196
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_196'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_197'/>
+197
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_197'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building26 = new Building(&#34;Outpost&#34;, player1, map.getTiles().get(326));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_198'/>
+198
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_198'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building26);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_199'/>
+199
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_199'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_200'/>
+200
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_200'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building27 = new Building(&#34;Outpost&#34;, player1, map.getTiles().get(328));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_201'/>
+201
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_201'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building27);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_202'/>
+202
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_202'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_203'/>
+203
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_203'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building28 = new Building(&#34;Farm&#34;, null, map.getTiles().get(333));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_204'/>
+204
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_204'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building28);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_205'/>
+205
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_205'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_206'/>
+206
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_206'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building29 = new Building(&#34;HQ&#34;, player1, map.getTiles().get(347));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_207'/>
+207
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_207'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building29);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_208'/>
+208
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_208'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_209'/>
+209
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_209'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building30 = new Building(&#34;Mine&#34;, null, map.getTiles().get(355));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_210'/>
+210
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_210'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building30);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_211'/>
+211
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_211'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_212'/>
+212
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_212'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building31 = new Building(&#34;Outpost&#34;, null, map.getTiles().get(357));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_213'/>
+213
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_213'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building31);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_214'/>
+214
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_214'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_215'/>
+215
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_215'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building32 = new Building(&#34;Mine&#34;, null, map.getTiles().get(361));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_216'/>
+216
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_216'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building32);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_217'/>
+217
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_217'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_218'/>
+218
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_218'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building33 = new Building(&#34;Mine&#34;, null, map.getTiles().get(363));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_219'/>
+219
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_219'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building33);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_220'/>
+220
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_220'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_221'/>
+221
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_221'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building34 = new Building(&#34;Farm&#34;, player1, map.getTiles().get(366));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_222'/>
+222
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_222'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building34);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_223'/>
+223
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_223'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_224'/>
+224
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_224'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building35 = new Building(&#34;Farm&#34;, player1, map.getTiles().get(368));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_225'/>
+225
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_225'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building35);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_226'/>
+226
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_226'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_227'/>
+227
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_227'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building36 = new Building(&#34;Mine&#34;, null, map.getTiles().get(378));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_228'/>
+228
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_228'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building36);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_229'/>
+229
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_229'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_230'/>
+230
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_230'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building37 = new Building(&#34;Mine&#34;, player1, map.getTiles().get(386));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_231'/>
+231
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_231'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building37);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_232'/>
+232
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_232'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_233'/>
+233
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_233'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Building building38 = new Building(&#34;Mine&#34;, player1, map.getTiles().get(388));</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_234'/>
+234
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_234'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.buildings.addBuilding(building38);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_235'/>
+235
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_235'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_236'/>
+236
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_236'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_237'/>
+237
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_237'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_238'/>
+238
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_238'></a>
+</td>
+<td class=''><pre><span  class=''>     * Medoti luo molemmille pelaajille pari aloitus yksikk&#195;&#182;&#195;&#164;.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_239'/>
+239
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_239'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_240'/>
+240
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_240'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_241'/>
+241
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_241'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_242'/>
+242
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_242'></a>
+</td>
+<td class=''><pre><span  class=''>    public void placeStartingUnits() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_243'/>
+243
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_243'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Unit unit = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(306), &#34;Spearman&#34;, this.player1);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_244'/>
+244
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_244'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Unit unit2 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(308), &#34;Spearman&#34;, this.player1);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_245'/>
+245
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_245'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Unit unit3 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(91), &#34;Spearman&#34;, this.player2);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_246'/>
+246
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_246'></a>
+</td>
+<td class='covered'><pre><span  class=''>        Unit unit4 = new Unit(3, 0.2, 15.0, 20.0, this.getMap().getTiles().get(93), &#34;Spearman&#34;, this.player2);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_247'/>
+247
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_247'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_248'/>
+248
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_248'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.player1.addUnit(unit);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_249'/>
+249
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_249'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.player1.addUnit(unit2);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_250'/>
+250
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_250'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.player2.addUnit(unit3);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_251'/>
+251
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_251'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.player2.addUnit(unit4);</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_252'/>
+252
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_252'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_253'/>
+253
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_253'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_254'/>
+254
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_254'></a>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_255'/>
+255
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_255'></a>
+</td>
+<td class=''><pre><span  class=''>     * Metodi luo kartan, luo ja asettaa rakennuset ja luo ja asettaa aloitus</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_256'/>
+256
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_256'></a>
+</td>
+<td class=''><pre><span  class=''>     * yksik&#195;&#182;t. Huomaa ett&#195;&#164; kartta on teht&#195;&#164;v&#195;&#164; ennenkuin yksik&#195;&#182;it&#195;&#164; tai</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_257'/>
+257
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_257'></a>
+</td>
+<td class=''><pre><span  class=''>     * rakennuksia voidaan alkaa asettaa.</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_258'/>
+258
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_258'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_259'/>
+259
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_259'></a>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_260'/>
+260
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_260'></a>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_261'/>
+261
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_261'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setUpScenario() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_262'/>
+262
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_262'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        buildMap();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_263'/>
+263
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_263'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        placeBuildings();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_264'/>
+264
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_264'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        placeStartingUnits();</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_265'/>
+265
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_265'></a>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_266'/>
+266
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_266'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_267'/>
+267
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_267'></a>
+</td>
+<td class=''><pre><span  class=''>    public Map getMap() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_268'/>
+268
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_268'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return map;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_269'/>
+269
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_269'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_270'/>
+270
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_270'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_271'/>
+271
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_271'></a>
+</td>
+<td class=''><pre><span  class=''>    public Player getPlayer1() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_272'/>
+272
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_272'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return player1;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_273'/>
+273
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_273'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_274'/>
+274
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_274'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_275'/>
+275
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_275'></a>
+</td>
+<td class=''><pre><span  class=''>    public Player getPlayer2() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_276'/>
+276
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_276'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return player2;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_277'/>
+277
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_277'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_278'/>
+278
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_278'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_279'/>
+279
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_279'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setSelectedTile(Tile selectedTile) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_280'/>
+280
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_280'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.selectedTile = selectedTile;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_281'/>
+281
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_281'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_282'/>
+282
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_282'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_283'/>
+283
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_283'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setSelectedUnit(Unit selectedUnit) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_284'/>
+284
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_284'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.selectedUnit = selectedUnit;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_285'/>
+285
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_285'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_286'/>
+286
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_286'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_287'/>
+287
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_287'></a>
+</td>
+<td class=''><pre><span  class=''>    public Tile getSelectedTile() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_288'/>
+288
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_288'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return selectedTile;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_289'/>
+289
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_289'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_290'/>
+290
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_290'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_291'/>
+291
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_291'></a>
+</td>
+<td class=''><pre><span  class=''>    public Unit getSelectedUnit() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_292'/>
+292
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_292'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return selectedUnit;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_293'/>
+293
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_293'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_294'/>
+294
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_294'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_295'/>
+295
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_295'></a>
+</td>
+<td class=''><pre><span  class=''>    public BuildingList getBuildings() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_296'/>
+296
+</td>
+<td class='killed'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_296'>1</a>
+</td>
+<td class='covered'><pre><span  class='killed'>        return buildings;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_297'/>
+297
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_297'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_298'/>
+298
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_298'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_299'/>
+299
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_299'></a>
+</td>
+<td class=''><pre><span  class=''>    public Building getSelectedBuilding() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_300'/>
+300
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_300'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return selectedBuilding;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_301'/>
+301
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_301'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_302'/>
+302
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_302'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_303'/>
+303
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_303'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setSelectedBuilding(Building selectedBuilding) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_304'/>
+304
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_304'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.selectedBuilding = selectedBuilding;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_305'/>
+305
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_305'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_306'/>
+306
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_306'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_307'/>
+307
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_307'></a>
+</td>
+<td class=''><pre><span  class=''>    public Player getPlayerWhoseTurnItIs() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_308'/>
+308
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_308'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return playerWhoseTurnItIs;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_309'/>
+309
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_309'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_310'/>
+310
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_310'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_311'/>
+311
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_311'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setPlayerWhoseTurnItIs(Player playerWhoseTurnItIs) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_312'/>
+312
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_312'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.playerWhoseTurnItIs = playerWhoseTurnItIs;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_313'/>
+313
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_313'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_314'/>
+314
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_314'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_315'/>
+315
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_315'></a>
+</td>
+<td class=''><pre><span  class=''>    public void setWinner(Player winner) {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_316'/>
+316
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_316'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>        this.winner = winner;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_317'/>
+317
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_317'></a>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_318'/>
+318
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_318'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_319'/>
+319
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_319'></a>
+</td>
+<td class=''><pre><span  class=''>    public Player getWinner() {</span></pre></td></tr>
+
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_320'/>
+320
+</td>
+<td class='survived'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_320'>1</a>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return winner;</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_321'/>
+321
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_321'></a>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_322'/>
+322
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_322'></a>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@27abb83e_323'/>
+323
+</td>
+<td class=''>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_323'></a>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_49'/> 
+
+<p class='KILLED'>changed conditional boundary : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> <p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> <p class='KILLED'>Changed increment from 1 to -1 : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_50'/> 
+
+<p class='SURVIVED'>negated conditional : SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_51'/> 
+
+<p class='SURVIVED'>Changed increment from 1 to -1 : SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_57'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_60'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_63'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_66'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_69'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_72'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_75'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_78'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_81'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_84'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_87'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_90'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_93'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_96'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_99'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_102'/> 
+
+<p class='KILLED'>negated conditional : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_107'>107</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_107'/> 
+
+<p class='KILLED'>removed call to peli/logic/Map::addTile : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_108'>108</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_108'/> 
+
+<p class='SURVIVED'>Changed increment from 1 to -1 : SURVIVED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_123'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_126'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_129'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_132'>132</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_132'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_135'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_138'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_141'>141</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_141'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_144'>144</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_144'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_147'>147</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_147'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_150'>150</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_150'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_153'>153</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_153'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_156'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_159'>159</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_159'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_162'>162</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_162'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_165'>165</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_165'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_168'>168</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_168'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_171'>171</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_171'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_174'>174</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_174'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_177'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_180'>180</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_180'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_183'>183</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_183'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_186'>186</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_186'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_189'>189</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_189'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_192'>192</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_192'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_195'>195</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_195'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_198'>198</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_198'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_201'>201</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_201'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_204'>204</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_204'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_207'>207</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_207'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_210'>210</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_210'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_213'>213</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_213'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_216'>216</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_216'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_219'>219</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_219'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_222'>222</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_222'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_225'>225</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_225'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_228'>228</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_228'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_231'>231</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_231'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_234'>234</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_234'/> 
+
+<p class='KILLED'>removed call to peli/logic/BuildingList::addBuilding : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_248'>248</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_248'/> 
+
+<p class='KILLED'>removed call to peli/logic/Player::addUnit : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_249'>249</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_249'/> 
+
+<p class='KILLED'>removed call to peli/logic/Player::addUnit : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_250'>250</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_250'/> 
+
+<p class='KILLED'>removed call to peli/logic/Player::addUnit : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_251'>251</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_251'/> 
+
+<p class='KILLED'>removed call to peli/logic/Player::addUnit : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_262'>262</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_262'/> 
+
+<p class='KILLED'>removed call to peli/logic/Game::buildMap : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_263'>263</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_263'/> 
+
+<p class='KILLED'>removed call to peli/logic/Game::placeBuildings : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_264'>264</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_264'/> 
+
+<p class='KILLED'>removed call to peli/logic/Game::placeStartingUnits : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_268'>268</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_268'/> 
+
+<p class='KILLED'>mutated return of Object value for peli/logic/Game::getMap to ( if (x != null) null else throw new RuntimeException ) : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_272'>272</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_272'/> 
+
+<p class='KILLED'>mutated return of Object value for peli/logic/Game::getPlayer1 to ( if (x != null) null else throw new RuntimeException ) : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_276'>276</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_276'/> 
+
+<p class='KILLED'>mutated return of Object value for peli/logic/Game::getPlayer2 to ( if (x != null) null else throw new RuntimeException ) : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_288'>288</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_288'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for peli/logic/Game::getSelectedTile to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_292'>292</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_292'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for peli/logic/Game::getSelectedUnit to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_296'>296</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_296'/> 
+
+<p class='KILLED'>mutated return of Object value for peli/logic/Game::getBuildings to ( if (x != null) null else throw new RuntimeException ) : KILLED -> peli.logic.GameTest.peli.logic.GameTest</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_300'>300</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_300'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for peli/logic/Game::getSelectedBuilding to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_308'>308</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_308'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for peli/logic/Game::getPlayerWhoseTurnItIs to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@27abb83e_320'>320</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@27abb83e_320'/> 
+
+<p class='NO_COVERAGE'>mutated return of Object value for peli/logic/Game::getWinner to ( if (x != null) null else throw new RuntimeException ) : NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+
+<li class='mutator'>MATH_MUTATOR</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>peli.logic.GameTest.peli.logic.GameTest (9 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 0.30
+
+</body>
+</html>
