@@ -1,8 +1,9 @@
 Aihemäärittely
 
 Pieni vuoropohjainen strategia (tyylin advance wars, uniwars, battle for westnoth) jota pelataan 20x20 ruudusta koostuvalla 
-kartalla. Kartta paloilla on maastoa, joissain rakennuksia ja voi olla yksiköitä. Peliä pelataan hotseattinä kahden ihmisen
-välillä. Toinen pelaa sinisiä ja toinen punaisia.  Peliä pelataan kartalla joka koostuu tiilistä. Tiilillä voi olla rakennuksia.
+kartalla. Kartta paloilla on maastoa, joissain rakennuksia ja voi olla yksiköitä. Tiile jolla yksikkö seisoo vaikuttaa sen
+kestokykyyn Peliä pelataan hotseattinä kahden ihmisen välillä. Toinen pelaa sinisiä ja toinen punaisia.  Peliä pelataan kartalla
+joka koostuu tiilistä. Tiilillä voi olla rakennuksia.
 Molemmilla pelaajilla on yksiköitä, jotka voivat liikkua, hyökätä ja vallata rakennuksia. Yksikkö voi liikkua ja hyökätä vain
 kerran vuorossa.Sininen aloittaa.  Pelin voittaa valloittamalla vastustajan Päämäja rakennuksen 
 (näyttää linnalta, jossa on pelaajan värin mukaisia bannereja. .  Yksiköt liikkuvat saavat liikkua vain kerran vuorossa 
