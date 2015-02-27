@@ -1,9 +1,26 @@
+Aihemäärittely
+
+Pieni vuoropohjainen strategia (tyylin advance wars, uniwars, battle for westnoth) jota pelataan 20x20 ruudusta koostuvalla 
+kartalla. Kartta paloilla on maastoa, joissain rakennuksia ja voi olla yksiköitä. Peliä pelataan hotseattinä kahden ihmisen
+välillä. Toinen pelaa sinisiä ja toinen punaisia.  Peliä pelataan kartalla joka koostuu tiilistä. Tiilillä voi olla rakennuksia.
+Molemmilla pelaajilla on yksiköitä, jotka voivat liikkua, hyökätä ja vallata rakennuksia. Yksikkö voi liikkua ja hyökätä vain
+kerran vuorossa.Sininen aloittaa.  Pelin voittaa valloittamalla vastustajan Päämäja rakennuksen 
+(näyttää linnalta, jossa on pelaajan värin mukaisia bannereja. .  Yksiköt liikkuvat saavat liikkua vain kerran vuorossa 
+ja maksimissaan kolmen ruudun päähän.  Yksikkö ei voi liikkua tiilenkulmasta kulmaan. Yksiköt voivat liikkua toistensa läpi 
+mutta eivät toistensa päälle. Rakennus voi rakentaa vain yhden yksikön vuorossa. Yksikkö saa liikkua ja hyökätä vuorolla,
+jona se on tehty.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Alkuperäinen utopistinen näkemys
+
 Aihe
 
 Aihe pieni vuoropohjainen strategia peli, tyyliin advance wars, uniwar tai battle for westnoth. 
 Kartta joka koostuu neliöistä tai heksoita, jokaisella neliöllä terrain type.
 Erilaiset terrainit vaalitivat eri määrän movement pointteja?. 
-Erilaisia yksiköitä ja rakennuksia. Rakennukset tuottavat kultaa tai mahdollistavat yksiköiden oston. Yksikot voivat vallata rakennuksia, mahdollisesti vain jotkin yksiköt. Yksiköillä ainakin HP ATTACK DEFENCE MOVEMENTmahdollisesti attact ja defence typet.
+Erilaisia yksiköitä ja rakennuksia. Rakennukset tuottavat kultaa tai mahdollistavat yksiköiden oston. Yksikot voivat vallata
+rakennuksia, mahdollisesti vain jotkin yksiköt. Yksiköillä ainakin HP ATTACK DEFENCE MOVEMENTmahdollisesti attact ja defence
+typet.
 Tavoitteena vallata vastustajan HQ.
 Mahdollisesti erilaisia factioneja ja eri karttoja.
 
@@ -11,6 +28,7 @@ Käyttäjät
 pelaajat 1-2
 
 Toiminnit
-Pelaaminen, käyttä siirtää vuorollaan yksikäitään ja häykkää niillä vastustajan yksiköihin toiveittaava valloittaa vastustajan päämaja.
+Pelaaminen, käyttä siirtää vuorollaan yksikäitään ja häykkää niillä vastustajan yksiköihin toiveittaava valloittaa vastustajan
+päämaja.
 
 
