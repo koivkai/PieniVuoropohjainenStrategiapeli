@@ -15,4 +15,11 @@ sen Player voi olla myös null, jolloin rakennus on neutraali.
 
 Game:een liittyy myös Map joka on lista tiiliä joista Map koostuu. Tile luokka määrittelee tiilet. Tiilillä on sijainti , tyyppi
 tiilen tyyppi (TileType) on enum joka kertoo millaista maastoa tiili edustaa. Tiilelle määräytyy defence sen mukaan minkä tyyppinen
-se on 
+se on. Tiilen defence vaikuttaa sen päällä olevan yksikön ottamaan vahinkoon, jos siihen hyökäyään. 
+
+GameMaker luo käyttöliittymän ja antaa sille Game olion, jota se käyttää. Käyttöliittymän UserInterface luo kaikki muut 
+käyttöliittymän osat. Canvas-luokka on vasttussa kaikkien pelissä olevien tiiliehn, yksiköiden ja rakennusten esittämisestä 
+pelaajalle. ClickDetector luokka hoitaa kaiken clikkamiseen perustuvan käytön eli, yksiköiden ja rakennusten valitsemisen ja 
+yksiköiden siirtämisen. KäyttäLiittymään liittyy 4 action listeneriä (Build, Capture, End Turn, Attack) jotka nimiensä mukaiset 
+toimminot, käyttäen UserInterfacelta saamaansa viitettä Game luokkaan.
+
