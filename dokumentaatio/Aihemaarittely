@@ -8,7 +8,14 @@ kerran vuorossa.Sininen aloittaa.  Pelin voittaa valloittamalla vastustajan Pä�
 (näyttää linnalta, jossa on pelaajan värin mukaisia bannereja. .  Yksiköt liikkuvat saavat liikkua vain kerran vuorossa 
 ja maksimissaan kolmen ruudun päähän.  Yksikkö ei voi liikkua tiilenkulmasta kulmaan. Yksiköt voivat liikkua toistensa läpi 
 mutta eivät toistensa päälle. Rakennus voi rakentaa vain yhden yksikön vuorossa. Yksikkö saa liikkua ja hyökätä vuorolla,
-jona se on tehty.
+jona se on tehty. Yksikkö hyökkää kaikkiin viereisiin vihollisyksiköihin (kulmittain ei ole vierekkäin). 
+Yksikkö voi hyökätä vain kerran vuorossa
+
+Käyttäjät;
+2 pelaajaa 
+
+Toimminnot:
+Yksikön siirtäminen, hyökkääminen, rakennuksen valtaus, uuden yksikön rakennus, vuoron lopettaminen.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 Alkuperäinen utopistinen näkemys
