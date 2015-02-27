@@ -91,4 +91,23 @@ public class Unit {
         return player;
     }
 
+    public int getMP() {
+        return MP;
+    }
+
+    public void setHasAttacked(boolean hasAttacked) {
+        this.hasAttacked = hasAttacked;
+    }
+
+    public void setHasMoved(boolean hasMoved) {
+        this.hasMoved = hasMoved;
+    }
+    
+    public boolean getHasMoved () {
+        return this.hasMoved;
+    }
+    
+    public boolean getHasAttacked () {
+        return this.hasAttacked;
+    }
 }
